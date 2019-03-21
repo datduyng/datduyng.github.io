@@ -2,14 +2,14 @@
 # bundle exec jekyll serve
 baseurl: ""
 url: "https://datduyng.github.io"
-title: Dat Nguyen # site's title
+title: Dat's Blog # site's title
 description: "website with machine learnin technology blogs" # used by search engines
 
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: Happy Creating # blog's title
+  title: Dat Nguyen # blog's title
   avatar: assets/img/triangle.svg
   favicon: assets/favicon.ico
   gravatar: # Email MD5 hash
