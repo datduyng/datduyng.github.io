@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Data Augmentation for Semantic Segmantation with Pytorch
-feature-img: "https://user-images.githubusercontent.com/35666615/54735508-96373200-4b74-11e9-9100-829fbac45983.png"
-thumbnail: "https://user-images.githubusercontent.com/35666615/54735508-96373200-4b74-11e9-9100-829fbac45983.png"
+feature-img: "https://user-images.githubusercontent.com/35666615/54736287-6b4edd00-4b78-11e9-9155-d8019e7ce790.png"
+thumbnail: "https://user-images.githubusercontent.com/35666615/54736287-6b4edd00-4b78-11e9-9155-d8019e7ce790.png"
 tags: [semantic segmantation, pytorch, deep learning, data augmentation]
 ---
 
