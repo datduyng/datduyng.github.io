@@ -125,7 +125,7 @@ On Transform wrapper like `RandomRotate` and `RandomCrop`, we will modified it t
 ```python
 def __call__(self, image, seed=10)
 ```
-A more complete version of the module can be find [**here**]([https://gist.github.com/datduyng/8d0db0afcfe4ba1f1fb4fa307938f5f9](https://gist.github.com/datduyng/8d0db0afcfe4ba1f1fb4fa307938f5f9))
+A more complete version of the module can be find [**here**](https://gist.github.com/datduyng/8d0db0afcfe4ba1f1fb4fa307938f5f9)
 
 Usage for our modified module would allow us to perform both Transformation form Pytorch library and our custome.
 
