@@ -1,7 +1,7 @@
 ---
 layout: post
-title: IOT weather station
-subtitle: Low cost IOT weather station
+title:Classical game
+subtitle: Having fun with classical
 img: "https://user-images.githubusercontent.com/35666615/52537705-1b862600-2d2f-11e9-9d49-7ac665cd36ed.png"
 date: March 2018
 tags: [Java, Classic game]
