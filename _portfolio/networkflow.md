@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Network Flow
+title: NetworkFlow
 subtitle: Realistic view to city traffic
-img: "https://user-images.githubusercontent.com/35666615/52537752-ad8e2e80-2d2f-11e9-9131-19a37012a5b1.png"
+img: "https://user-images.githubusercontent.com/35666615/55765587-fe6f8a00-5a35-11e9-90aa-df35de9f5b87.gif"
 date: Januarry 2019
 tags: [Java, Javascript, Materialize css, Nodejs, JavaFX, FXGL, JUnit]
 ---
