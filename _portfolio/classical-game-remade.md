@@ -1,6 +1,6 @@
 ---
 layout: post
-title:Classical game
+title: Classical game
 subtitle: Having fun with classical
 img: "https://user-images.githubusercontent.com/35666615/52537705-1b862600-2d2f-11e9-9d49-7ac665cd36ed.png"
 date: March 2018
@@ -15,3 +15,5 @@ As a good review on datastructure and algorithm. re-implementing in my own thoug
 - [Snake](https://github.com/datduyng/snake)
 - [Tetris](https://github.com/datduyng/tetris-world)
 - Flappy bird(On going)
+
+
