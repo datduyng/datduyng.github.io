@@ -4,7 +4,7 @@ title: Network Flow
 subtitle: Realistic view to city traffic
 img: "https://user-images.githubusercontent.com/35666615/52537752-ad8e2e80-2d2f-11e9-9131-19a37012a5b1.png"
 date: Januarry 2019
-tags: [Java, Javascript, HTML, Nodejs, JavaFX, FXGL, JUnit]
+tags: [Java, Javascript, Materialize css, Nodejs, JavaFX, FXGL, JUnit]
 ---
 
 ![image]({{page.img|relative_url}})
@@ -46,17 +46,17 @@ Analyzing traffic are important technique to help construction company as well a
 
 ##### Online app
 
--   •  [Pixijs](http://www.pixijs.com/)
--   •  [Javascript](https://www.javascript.com/)
--   •  [Jquery](https://jquery.com/)
--   •  [Materialize css](https://materializecss.com/)
+-   [Pixijs](http://www.pixijs.com/)
+-   [Javascript](https://www.javascript.com/)
+-   [Jquery](https://jquery.com/)
+-   [Materialize css](https://materializecss.com/)
 
 ##### Desktop app
 
 -   [Java](https://www.java.com/en/)
 -   [JavaFX](https://openjfx.io/)
 -   [FXGL](http://almasb.github.io/FXGLGames/)
--    [Eclipse](https://www.eclipse.org/)
+-   [Eclipse](https://www.eclipse.org/)
 
 #### Quick demo
 
