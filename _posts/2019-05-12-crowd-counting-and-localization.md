@@ -110,8 +110,8 @@ An example of a more dense crowd with GAM is shown as follow
 ## II.  Understanding the Architecture
 
 <center>
-	<img width="300" height="350" src="https://user-images.githubusercontent.com/35666615/57590155-63b01280-74ef-11e9-8dc0-61df165f1cda.PNG">
-	<p> Figure II.1. Architecture layout for People Counting Network
+	<img width="450" height="350" src="https://user-images.githubusercontent.com/35666615/57590155-63b01280-74ef-11e9-8dc0-61df165f1cda.PNG">
+	<p> Figure II.1. Architecture layout for People Counting Network</p>
 </center>
 
 In this work, we are going to utilize the existing VGG architecture as the backbone with our own parameter to fit with our hardward. To keep the output density not too small in size, we can alternatively reduce number of pooling layers. In my implementation, I kept 3 pooling layers this mean that for input images of size (480, 640) in our case the output will be reduced by `1/8` corresponding to input size of `(60, 80)`. A  quick formula that will help us calculate the output density map size is as follows
