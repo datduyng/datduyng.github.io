@@ -2,8 +2,8 @@
 layout: post
 title: People Counting and Localisation With Deep learning
 subtitle: Leveraging Convolution neural network to count objects
-feature-img: "https://user-images.githubusercontent.com/35666615/57591863-3cf6d980-74f9-11e9-8911-2dea4d5dbab3.png"
-thumbnail: "https://user-images.githubusercontent.com/35666615/57591863-3cf6d980-74f9-11e9-8911-2dea4d5dbab3.png"
+feature-img: "https://user-images.githubusercontent.com/35666615/57671435-5e2ef700-75d9-11e9-82fd-23a875437f1c.png"
+thumbnail: "https://user-images.githubusercontent.com/35666615/57671435-5e2ef700-75d9-11e9-82fd-23a875437f1c.png"
 tags: [Deep Learning, Pytorch, Object Counting, Object Localisation]
 ---
 
