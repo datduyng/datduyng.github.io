@@ -56,14 +56,18 @@ Important things that we will need for our work from the dataset zip are frames 
 Figure below shown the visualization of a few image + ground truth label from the dataset. 
 
 
-<table>
+<style>
+	table {border: none;}
+</style>
+
+<table cellspacing="2px" cellpadding="0">
 	<tr>
-	    <td ><img align="center" width="100%" height="32%" src="https://user-images.githubusercontent.com/35666615/57588278-4d965800-74d7-11e9-89eb-9da9247f87d4.PNG" /></td>
-	    <td ><img align="center" width="100%" height="32%" src="https://user-images.githubusercontent.com/35666615/57588279-4d965800-74d7-11e9-9b22-ab1aced62aed.PNG" /></td>
+	    <td ><img align="center" width="100%" height="36%" src="https://user-images.githubusercontent.com/35666615/57588278-4d965800-74d7-11e9-89eb-9da9247f87d4.PNG" /></td>
+	    <td ><img align="center" width="100%" height="36%" src="https://user-images.githubusercontent.com/35666615/57588279-4d965800-74d7-11e9-9b22-ab1aced62aed.PNG" /></td>
     </tr>
 	<tr>
-	    <td ><img align="center" width="100%" height="32%" src="https://user-images.githubusercontent.com/35666615/57588191-520e4100-74d6-11e9-8d3a-e48df409a77d.PNG" /></td>
-	    <td ><img align="center" width="100%" height="32%" src="https://user-images.githubusercontent.com/35666615/57588193-52a6d780-74d6-11e9-9a9a-e6dc752df5f9.PNG" /></td>
+	    <td ><img align="center" width="100%" height="36%" src="https://user-images.githubusercontent.com/35666615/57588191-520e4100-74d6-11e9-8d3a-e48df409a77d.PNG" /></td>
+	    <td ><img align="center" width="100%" height="36%" src="https://user-images.githubusercontent.com/35666615/57588193-52a6d780-74d6-11e9-9a9a-e6dc752df5f9.PNG" /></td>
     </tr>
 </table>
 <center> Figure I.A show example of images with processed label from Mall dataset</center>
@@ -190,7 +194,7 @@ Visually, our model performed well on localising people head given an images as 
 	                      anti_aliasing=True)
 ```
 
-<table>
+<table cellspacing="2px" cellpadding="0">
 	<tr>
 	    <td ><img align="center" width="100%" height="23%" src="https://user-images.githubusercontent.com/35666615/57590980-a88a7800-74f4-11e9-9c56-a332a8a6f8ad.PNG" /></td>
 	    <td ><img align="center" width="100%" height="23%" src="https://user-images.githubusercontent.com/35666615/57590981-a88a7800-74f4-11e9-9c74-5cf8a932bd81.PNG" /></td>
