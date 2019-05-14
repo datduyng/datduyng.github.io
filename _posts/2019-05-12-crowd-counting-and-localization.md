@@ -62,11 +62,11 @@ Figure below shown the visualization of a few image + ground truth label from th
 
 <table cellspacing="2px" cellpadding="0">
 	<tr>
-	    <td ><img align="center" width="100%" height="36%" src="https://user-images.githubusercontent.com/35666615/57588278-4d965800-74d7-11e9-89eb-9da9247f87d4.PNG" /></td>
+	    <td ><img align="center" width="95%" height="36%" src="https://user-images.githubusercontent.com/35666615/57588278-4d965800-74d7-11e9-89eb-9da9247f87d4.PNG" /></td>
 	    <td ><img align="center" width="100%" height="36%" src="https://user-images.githubusercontent.com/35666615/57588279-4d965800-74d7-11e9-9b22-ab1aced62aed.PNG" /></td>
     </tr>
 	<tr>
-	    <td ><img align="center" width="100%" height="36%" src="https://user-images.githubusercontent.com/35666615/57588191-520e4100-74d6-11e9-8d3a-e48df409a77d.PNG" /></td>
+	    <td ><img align="center" width="95%" height="36%" src="https://user-images.githubusercontent.com/35666615/57588191-520e4100-74d6-11e9-8d3a-e48df409a77d.PNG" /></td>
 	    <td ><img align="center" width="100%" height="36%" src="https://user-images.githubusercontent.com/35666615/57588193-52a6d780-74d6-11e9-9a9a-e6dc752df5f9.PNG" /></td>
     </tr>
 </table>
@@ -196,20 +196,34 @@ Visually, our model performed well on localising people head given an images as 
 
 <table cellspacing="2px" cellpadding="0">
 	<tr>
-	    <td ><img align="center" width="100%" height="23%" src="https://user-images.githubusercontent.com/35666615/57590980-a88a7800-74f4-11e9-9c56-a332a8a6f8ad.PNG" /></td>
-	    <td ><img align="center" width="100%" height="23%" src="https://user-images.githubusercontent.com/35666615/57590981-a88a7800-74f4-11e9-9c74-5cf8a932bd81.PNG" /></td>
+	    <td ><img align="center" width="100%" height="28%" src="https://user-images.githubusercontent.com/35666615/57590980-a88a7800-74f4-11e9-9c56-a332a8a6f8ad.PNG" /></td>
+	    <td ><img align="center" width="100%" height="28%" src="https://user-images.githubusercontent.com/35666615/57590981-a88a7800-74f4-11e9-9c74-5cf8a932bd81.PNG" /></td>
     </tr>
 	<tr>
-	    <td ><img align="center" width="100%" height="30%" src="https://user-images.githubusercontent.com/35666615/57590982-a9230e80-74f4-11e9-847f-29a78e05183c.PNG" /></td>
-	    <td ><img align="center" width="100%" height="30%" src="https://user-images.githubusercontent.com/35666615/57590983-a9230e80-74f4-11e9-8fa2-17c9567cfbb4.PNG" /></td>
+	    <td ><img align="center" width="100%" height="36%" src="https://user-images.githubusercontent.com/35666615/57590982-a9230e80-74f4-11e9-847f-29a78e05183c.PNG" /></td>
+	    <td ><img align="center" width="100%" height="36%" src="https://user-images.githubusercontent.com/35666615/57590983-a9230e80-74f4-11e9-8fa2-17c9567cfbb4.PNG" /></td>
     </tr>
 </table>
 <center> Figure IV show example of images with density map output(after upsampling) by people count network</center>
 
 ### Result
-|Method			 | MAE      | RMSE		 | Average Error rate|
-|:---------------:|:--------:|:----------:|:--------------:|
-|VGG+density_map  |**7.93**  |**9.1**     | **18.9 %**     |
+<table>
+	<tbody>
+		<tr>
+			<td>Method</td>
+			<td>MAE</td>
+			<td>&nbsp;RMSE&nbsp;</td>
+			<td>&nbsp;Average Error rate</td>
+		</tr>
+		<tr>
+			<td>VGG+DensityMap</td>
+			<td>7.93</td>
+			<td>9.1</td>
+			<td>18.9 %</td>
+		</tr>
+	</tbody>
+</table>
+
 Deep neural network prone to overfit and hard to optimize. In my case, no validation set were used. I babys at the training process and stop once it first reach a plateau ranging from epoch 10-15 as shown in figure IV.2.
 
 <center>
