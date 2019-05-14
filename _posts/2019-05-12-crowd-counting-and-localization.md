@@ -56,9 +56,16 @@ Important things that we will need for our work from the dataset zip are frames 
 Figure below shown the visualization of a few image + ground truth label from the dataset. 
 
 
-![PC_sample_image_gt03](https://user-images.githubusercontent.com/35666615/57588278-4d965800-74d7-11e9-89eb-9da9247f87d4.PNG)            |  ![PC_sample_image_gt04](https://user-images.githubusercontent.com/35666615/57588279-4d965800-74d7-11e9-9b22-ab1aced62aed.PNG)
-:-------------------------:|:-------------------------:
-![PC_sample_image_gt02](https://user-images.githubusercontent.com/35666615/57588191-520e4100-74d6-11e9-8d3a-e48df409a77d.PNG)  |  ![PC_sample_image_gt01](https://user-images.githubusercontent.com/35666615/57588193-52a6d780-74d6-11e9-9a9a-e6dc752df5f9.PNG)
+<table>
+	<tr>
+	    <td ><img align="center" width="100%" height="32%" src="https://user-images.githubusercontent.com/35666615/57588278-4d965800-74d7-11e9-89eb-9da9247f87d4.PNG" /></td>
+	    <td ><img align="center" width="100%" height="32%" src="https://user-images.githubusercontent.com/35666615/57588279-4d965800-74d7-11e9-9b22-ab1aced62aed.PNG" /></td>
+    </tr>
+	<tr>
+	    <td ><img align="center" width="100%" height="32%" src="https://user-images.githubusercontent.com/35666615/57588191-520e4100-74d6-11e9-8d3a-e48df409a77d.PNG" /></td>
+	    <td ><img align="center" width="100%" height="32%" src="https://user-images.githubusercontent.com/35666615/57588193-52a6d780-74d6-11e9-9a9a-e6dc752df5f9.PNG" /></td>
+    </tr>
+</table>
 <center> Figure I.A show example of images with processed label from Mall dataset</center>
 
 
@@ -71,12 +78,12 @@ In case of density ground truth labeling, we are treating each head count as an 
 
 For G labeled cell in an image, the discrete density map can be represent as follows:
 $$
-H(x) = \sum_{i=1}^{G} \delta(x-x_i)
+			H(x) = \sum_{i=1}^{G} \delta(x-x_i)
 $$
 
 To convert the discrete delta map to a continuous density map distribution, we may convolve function $H(x)$ with a gaussian filter denoted as
 $$
-F(x) = H(x) \circledast G_{\sigma}(x)
+			F(x) = H(x) \circledast G_{\sigma}(x)
 $$
 
 However, density function assume that these discrete point are independent sample in the images with out range of gaussian kernel size. Therefore, for each head $$x_i$$ in a given image, we compute the average distance to it k nearest neighbor denoted as $$d_{average} = \frac{1}{k}\sum_{j=1}^{k}d_{ij}$$ 
@@ -84,7 +91,7 @@ However, density function assume that these discrete point are independent sampl
 To estimate the crowd density around point $x_i$ we may convolve with a gaussian kernel with variance $$\sigma$$ proportional to $$d_{average}$$ and set $$\beta$$ as the initial variance denoted as 
 
 $$
-F(x) = H(x) \circledast G_{\sigma_i}(x), \text{where } \sigma_i = \beta d_{average} 
+			F(x) = H(x) \circledast G_{\sigma_i}(x), \text{where } \sigma_i = \beta d_{average} 
 $$
 
 ### C. Data preprocessing
