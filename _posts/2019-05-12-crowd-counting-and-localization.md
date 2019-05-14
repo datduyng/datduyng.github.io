@@ -203,9 +203,9 @@ Visually, our model performed well on localising people head given an images as 
 <center> Figure IV show example of images with density map output(after upsampling) by people count network</center>
 
 ### Result
-Method			 | MAE      | RMSE		 | Average Error rate
-:---------------:|:--------:|:----------:|:--------------:
-VGG+density_map  |**7.93**  |**9.1**     | **18.9 %**     |
+|Method			 | MAE      | RMSE		 | Average Error rate|
+|:---------------:|:--------:|:----------:|:--------------:|
+|VGG+density_map  |**7.93**  |**9.1**     | **18.9 %**     |
 Deep neural network prone to overfit and hard to optimize. In my case, no validation set were used. I babys at the training process and stop once it first reach a plateau ranging from epoch 10-15 as shown in figure IV.2.
 
 <center>
