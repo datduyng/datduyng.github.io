@@ -183,9 +183,16 @@ Visually, our model performed well on localising people head given an images as 
 	                      anti_aliasing=True)
 ```
 
-![PC_sample02](https://user-images.githubusercontent.com/35666615/57590980-a88a7800-74f4-11e9-9c56-a332a8a6f8ad.PNG)            |  ![PC_sample01](https://user-images.githubusercontent.com/35666615/57590981-a88a7800-74f4-11e9-9c74-5cf8a932bd81.PNG)
-:-------------------------:|:-------------------------:
-![PC_sample04](https://user-images.githubusercontent.com/35666615/57590982-a9230e80-74f4-11e9-847f-29a78e05183c.PNG)  |  ![PC_sample03](https://user-images.githubusercontent.com/35666615/57590983-a9230e80-74f4-11e9-8fa2-17c9567cfbb4.PNG)
+<table>
+	<tr>
+	    <td ><img align="center" width="100%" height="23%" src="https://user-images.githubusercontent.com/35666615/57590980-a88a7800-74f4-11e9-9c56-a332a8a6f8ad.PNG" /></td>
+	    <td ><img align="center" width="100%" height="23%" src="https://user-images.githubusercontent.com/35666615/57590981-a88a7800-74f4-11e9-9c74-5cf8a932bd81.PNG" /></td>
+    </tr>
+	<tr>
+	    <td ><img align="center" width="100%" height="30%" src="https://user-images.githubusercontent.com/35666615/57590982-a9230e80-74f4-11e9-847f-29a78e05183c.PNG" /></td>
+	    <td ><img align="center" width="100%" height="30%" src="https://user-images.githubusercontent.com/35666615/57590983-a9230e80-74f4-11e9-8fa2-17c9567cfbb4.PNG" /></td>
+    </tr>
+</table>
 <center> Figure IV show example of images with density map output(after upsampling) by people count network</center>
 
 ### Result
