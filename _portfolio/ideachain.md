@@ -6,13 +6,12 @@ date: August 2019
 tags: [nodejs, vuejs, bootstrap, sqlite]
 ---
 
-<p align="center">
-  <img width="180" height="180" src="https://i.ibb.co/Yh4sC3B/a53965d19339.png">
-</p>
+ <img width="180" height="180" align="center" src="https://i.ibb.co/Yh4sC3B/a53965d19339.png">
 
 
 # IdeaChain
 - Web demo. [here](http://ideachain.glitch.me/)
+- github. [here](https://github.com/datduyng/ideachain/)
 
 # Why? 
 - Many Social media site provide an open place where most people share a good side of their life. Ideas often get hold back to be shared on Social media. Individual often afraids that someone is up to critique and refuse his or her idea. => most social media are non-productive environment. **Goal** is to create a productive social media. 
