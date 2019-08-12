@@ -2,7 +2,7 @@
 layout: post
 title: IdeaChain - Social Networking site to find collaborator on your project
 img: "https://i.ibb.co/Yh4sC3B/a53965d19339.png"
-date: March 2019
+date: August 2019
 tags: [nodejs, vuejs, bootstrap, sqlite]
 ---
 
