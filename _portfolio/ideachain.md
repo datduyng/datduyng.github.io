@@ -7,7 +7,7 @@ tags: [nodejs, vuejs, bootstrap, sqlite]
 ---
 
 <p align="center">
-  <img width="180" height="180" src="{{page.img|relative_url}}">
+  <img width="180" height="180" src="https://i.ibb.co/Yh4sC3B/a53965d19339.png">
 </p>
 
 
