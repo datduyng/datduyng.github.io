@@ -6,8 +6,9 @@ date: August 2019
 tags: [nodejs, vuejs, bootstrap, sqlite]
 ---
 
-![image]({{page.img|relative_url}})
-
+<p align="center">
+  <img width="180" height="180" src="{{page.img|relative_url}}">
+</p>
 
 
 # IdeaChain
