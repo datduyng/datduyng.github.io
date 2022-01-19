@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background: #f5f5f5;
+}
+
+.swipe {
+  position: absolute;
+}
