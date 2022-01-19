@@ -1,5 +1,5 @@
 import React, { createRef, useState } from "react";
-import TinderCard from "react-tinder-card";
+import TinderCard from "../components/tinder-card";
 import { FaHeart } from "react-icons/fa";
 import { VscChromeClose } from "react-icons/vsc";
 import { useRouter } from "next/router";
@@ -48,7 +48,8 @@ const Home = () => {
         <div className="text-3xl pb-5">Meet Dom!!</div>
         <TinderCard
           ref={cardSwipeRef}
-          onCardLeftScreen={(dir) => {
+          swipeRequirementType="velocity"
+          onCardLeftScreen={(dir: "left" | "down" | "right" | "up") => {
             setSwipedState(stateMap[dir] as "left" | "current" | "right");
           }}
         >
