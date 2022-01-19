@@ -74,7 +74,7 @@ const Home = () => {
               <hr />
               <div className="text-sm pt-3">
                 he/him, 5'9. I like to work out 🏋️‍♂️ rock climbing 🧗 skiing ⛷️
-                running 🏃‍♂️ and building products 🕹️. I like to blogs on IOTs,
+                running 🏃‍♂️ and building products 🕹️. I like to blog on IOTs,
                 web tech, infra related. Tinkering with the web 3.0. Swipe right
                 for my resume 😜
               </div>
