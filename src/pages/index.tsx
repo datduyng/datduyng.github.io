@@ -8,6 +8,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+
+      <h1>
+        testing
+      </h1>
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
         <h1 className="text-6xl font-bold">
           Welcome to{' '}
