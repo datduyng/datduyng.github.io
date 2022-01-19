@@ -45,7 +45,7 @@ const Home = () => {
           margin: "auto",
         }}
       >
-        <div className="text-3xl pb-5">Date Dom</div>
+        <div className="text-3xl pb-5">Meet Dom!!</div>
         <TinderCard
           ref={cardSwipeRef}
           onCardLeftScreen={(dir) => {
