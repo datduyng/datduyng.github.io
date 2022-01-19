@@ -1,0 +1,21 @@
+{
+    "name": "datduyng.github.io",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "build": "cd src && yarn build"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/datduyng/datduyng.github.io.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/datduyng/datduyng.github.io/issues"
+    },
+    "homepage": "https://github.com/datduyng/datduyng.github.io#readme",
+    "dependencies": {}
+  }
