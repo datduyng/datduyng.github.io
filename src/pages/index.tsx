@@ -1,86 +1,136 @@
-import Head from 'next/head'
+import React, { createRef, useState } from "react";
+import TinderCard from "react-tinder-card";
+import { FaHeart } from "react-icons/fa";
+import { VscChromeClose } from "react-icons/vsc";
+import { useRouter } from "next/router";
+import Welcome from "./welcome";
+import Oops from "./oops";
 
-export default function Home() {
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+const stateMap = {
+  up: "right",
+  down: "left",
+  right: "right",
+  left: "left",
+};
 
+const Home = () => {
+  const cardSwipeRef = createRef<any>();
+  const router = useRouter();
+  const swipe = async (dir: "left" | "right") => {
+    if (cardSwipeRef.current?.swipe) {
+      await cardSwipeRef.current.swipe(dir);
+    }
 
-      <h1>
-        testing
-      </h1>
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
+    if (dir === "left") {
+      router.push("/oops");
+    } else {
+      router.push("/welcome");
+    }
+  };
 
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.tsx
-          </code>
-        </p>
+  const [swipedState, setSwipedState] = useState<"left" | "current" | "right">(
+    "current"
+  );
 
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+  const homeComponents = (
+    <>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignContent: "center",
+          alignItems: "center",
+          width: "405px",
+          margin: "auto",
+        }}
+      >
+        <div className="text-3xl pb-5">Date Dom</div>
+        <TinderCard
+          ref={cardSwipeRef}
+          onCardLeftScreen={(dir) => {
+            setSwipedState(stateMap[dir] as "left" | "current" | "right");
+          }}
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
-      </footer>
-    </div>
-  )
-}
+          <div className="bg-white border-2 rounded-md">
+            <div
+              style={{
+                overflow: "hidden",
+              }}
+            >
+              <img
+                src="/personal.jpg"
+                className="rounded-t-md"
+                style={{
+                  height: "415px",
+                  width: "405px",
+                }}
+              />
+            </div>
+            <div className="p-3">
+              <p className="text-xl">Dominic Nguyen</p>
+              <p className="text-base text-slate-400">@datduyng</p>
+              <p className="pb-3">Just vib'in. ❤️ Open source.</p>
+              <hr />
+              <div className="text-sm pt-3">
+                he/him, 5'9. I like to work out 🏋️‍♂️ rock climbing 🧗 skiing ⛷️
+                running 🏃‍♂️ and building products 🕹️. I like to blogs on IOTs,
+                web tech, infra related. Tinkering with the web 3.0. Swipe right
+                for my resume 😜
+              </div>
+            </div>
+          </div>
+        </TinderCard>
+        <div className="flex justify-between">
+          <button
+            className="bg-white m-4"
+            style={{
+              height: "60px",
+              width: "60px",
+              borderRadius: "50%",
+            }}
+            onClick={() => swipe("left")}
+          >
+            <VscChromeClose
+              fontSize={32}
+              style={{
+                margin: "auto",
+              }}
+              color="#CDD6DD"
+            />
+          </button>
+          <button
+            className="bg-white m-4"
+            style={{
+              height: "60px",
+              width: "60px",
+              borderRadius: "50%",
+            }}
+            onClick={() => swipe("right")}
+          >
+            <FaHeart
+              fontSize={32}
+              style={{
+                margin: "auto",
+              }}
+              color="#FFACE4"
+            />{" "}
+          </button>
+        </div>
+      </div>
+    </>
+  );
+
+  switch (swipedState) {
+    case "current":
+      return homeComponents;
+    case "left":
+      return <Oops />;
+    case "right":
+      return <Welcome />;
+    default:
+      break;
+  }
+};
+
+export default Home;
