@@ -138,3 +138,11 @@ ol {
     grid-template-columns: 1fr;
   }
 }
+
+.markdown > ul {
+  @apply list-disc ml-5
+}
+
+.markdown > p {
+  margin: 0px !important
+}
