@@ -14,6 +14,50 @@ import {
 import Layout from "../components/layout";
 
 const SWIPE_THRESHOLD = 60;
+
+const Heart = ({
+  style,
+  className,
+  fontSize
+}: {
+  style?: React.CSSProperties;
+  className?: string;
+  fontSize?: number
+}) => {
+  return (
+    <FaHeart
+      fontSize={fontSize || 32}
+      className={className}
+      style={{
+        margin: "auto",
+        ...style,
+      }}
+      color="#FFACE4"
+    />
+  );
+};
+
+const Nope = ({
+  style,
+  className,
+  fontSize,
+}: {
+  style?: React.CSSProperties;
+  className?: string;
+  fontSize?: number
+}) => {
+  return (
+    <VscChromeClose
+      className={className}
+      fontSize={fontSize || 32}
+      style={{
+        margin: "auto",
+        ...style,
+      }}
+      color="#CDD6DD"
+    />
+  );
+};
 const Home = () => {
   const cardSwipeRef = createRef<any>();
   const router = useRouter();
@@ -64,7 +108,8 @@ const Home = () => {
           src="/personal.jpg"
           className="rounded-t-md"
           style={{
-            height: "415px",
+            // height: "415px",
+            objectFit: "contain",
             width: "405px",
           }}
         />
@@ -86,18 +131,32 @@ const Home = () => {
   const [swipedState, setSwipeState] = useState<"left" | "mid" | "right">(
     "mid"
   );
+  const [action, setAction] = useState<"left" | "mid" | "right">("mid");
+  console.log("motion", motionValue.get());
 
-  // useEffect(() => {
-  //   motionValue.onChange(curr => {
-  //     if
-  //   })
-  // })
   const homeComponents = (
     <motion.div
       style={{
         overflow: "hidden",
       }}
     >
+      <span
+        className={
+          "tinder-status " + (action !== "mid" ? "tinder-status-active" : "")
+        }
+        style={{
+          position: "absolute",
+          transform: 'translate(-50%,0)',
+          top: "50%",
+          left: "50%",
+          zIndex: 2,
+          textAlign: "center",
+          pointerEvents: "none",
+        }}
+      >
+        <Heart style={{ display: action === "right" ? undefined : "none" }} fontSize={100}/>
+        <Nope style={{ display: action === "left" ? undefined : "none" }} fontSize={100} />
+      </span>
       <div
         style={{
           display: "flex",
@@ -109,7 +168,7 @@ const Home = () => {
           margin: "auto",
         }}
       >
-        <div className="text-3xl pb-5 xs:hidden sm:hidden md:flex">
+        <div className="text-3xl pb-5 xs:hidden sm:hidden md:flex mt-3">
           Meet Dom!!
         </div>
         <motion.div
@@ -119,20 +178,24 @@ const Home = () => {
           custom={motionValue}
           // initial={{ scale: 0.9 }}
           exit={(motionValue.get() * 10) as any}
+          onDrag={(event, info) => {
+            const dir = motionValue.get() > 0 ? "right" : "left";
+            setAction(dir);
+          }}
           onDragEnd={(event, info) => {
             if (Math.abs(motionValue.get()) > SWIPE_THRESHOLD) {
               // remove();
-              console.log("remove info", event, info, motionValue.get());
               const dir = motionValue.get() > 0 ? "right" : "left";
               setSwipeState(dir);
-              if (dir ==="left") {
-                router.push('/oops');
+              if (dir === "left") {
+                router.push("/oops");
               } else {
-                router.push('/?match')
+                router.push("/?match");
               }
             } else {
               animControls.start({ x: 0, y: 0 });
             }
+            setAction("mid");
           }}
           // exit={(x) => ({ x: x.get() * 10 as any })}
         >
@@ -148,13 +211,7 @@ const Home = () => {
             }}
             onClick={() => swipe("left")}
           >
-            <VscChromeClose
-              fontSize={32}
-              style={{
-                margin: "auto",
-              }}
-              color="#CDD6DD"
-            />
+            <Nope />
           </button>
           <button
             className="bg-white m-4"
@@ -167,13 +224,7 @@ const Home = () => {
               swipe("right");
             }}
           >
-            <FaHeart
-              fontSize={32}
-              style={{
-                margin: "auto",
-              }}
-              color="#FFACE4"
-            />{" "}
+            <Heart />
           </button>
         </div>
       </div>
