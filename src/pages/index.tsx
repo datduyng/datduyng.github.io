@@ -106,10 +106,10 @@ export function Welcome() {
           className="flex flex-col justify-center items-center
         text-center"
         >
-          <div className="text-red-600 mtext text-6xl mt-10 ">
+          <div className="text-red-600 mtext text-4xl sm:text-6xl mt-10 font-bold">
             It's a match!
           </div>
-          <div className="flex flex-row gap-10 mt-5">
+          <div className="flex flex-row gap-5 mt-5">
             <div
               style={{
                 backgroundColor: '#e17055',
@@ -123,8 +123,8 @@ export function Welcome() {
               src="/avatar.png"
               style={{
                 backgroundSize: "contain",
-                height: "150px",
-                width: "150px",
+                maxHeight: "150px",
+                maxWidth: "150px",
               }}
               alt="Dominic Nguyen"
             />

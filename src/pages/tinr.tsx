@@ -108,7 +108,6 @@ const Home = () => {
           src="/personal.jpg"
           className="rounded-t-md"
           style={{
-            // height: "415px",
             objectFit: "contain",
             width: "405px",
           }}
