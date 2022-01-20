@@ -64,9 +64,8 @@ const ButtonTemplate = ({
     </div>
   );
 };
-export default function Welcome() {
+export function Welcome() {
   return (
-    <Layout>
       <div
         className="flex flex-col mx-5"
         style={{
@@ -89,6 +88,10 @@ export default function Welcome() {
           ))}
         </div>
       </div>
-    </Layout>
   );
+}
+
+
+export default function WelcomeWrap() {
+  return <Layout><Welcome /></Layout>
 }

@@ -3,9 +3,8 @@ import React from "react";
 import { FaLinkedin, FaGithub, FaRegFilePdf } from "react-icons/fa";
 import Layout from "../components/layout";
 
-export default function Welcome() {
+export function Oops() {
   return (
-    <Layout>
  <div
       className="flex flex-col mt-20"
       style={{
@@ -35,7 +34,10 @@ export default function Welcome() {
         </a>
       </div>
     </div>
-    </Layout>
-   
   );
+}
+
+
+export default function OopsWrap() {
+  return <Layout><Oops /></Layout>
 }

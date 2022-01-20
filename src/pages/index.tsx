@@ -2,8 +2,8 @@ import React, { createRef, useEffect, useState } from "react";
 import { FaHeart } from "react-icons/fa";
 import { VscChromeClose } from "react-icons/vsc";
 import { useRouter } from "next/router";
-import Welcome from "./welcome";
-import Oops from "./oops";
+import { Welcome } from "./welcome";
+import { Oops } from "./oops";
 import {
   AnimatePresence,
   motion,
@@ -12,7 +12,6 @@ import {
   useTransform,
 } from "framer-motion";
 import Layout from "../components/layout";
-
 
 const SWIPE_THRESHOLD = 60;
 const Home = () => {
@@ -47,15 +46,18 @@ const Home = () => {
   // on dragging card to left(-200) or right(200)
   // opacity gradually changes to 0
   // and when the card is in center opacity = 1
-  const opacityValue = useTransform(motionValue, [-100, -50, 0, 50, 100],
-    [0, 1, 1, 1, 0]);
+  const opacityValue = useTransform(
+    motionValue,
+    [-100, -50, 0, 50, 100],
+    [0, 1, 1, 1, 0]
+  );
 
   const tinderCard = (
     <div className="bg-white border-2 rounded-md">
       <div
         style={{
           overflow: "hidden",
-          pointerEvents: 'none',
+          pointerEvents: "none",
         }}
       >
         <img
@@ -81,7 +83,9 @@ const Home = () => {
     </div>
   );
   const animControls = useAnimation();
-  const [swipedState, setSwipeState] = useState<"left" | "mid" | "right">("mid");
+  const [swipedState, setSwipeState] = useState<"left" | "mid" | "right">(
+    "mid"
+  );
 
   // useEffect(() => {
   //   motionValue.onChange(curr => {
@@ -105,7 +109,9 @@ const Home = () => {
           margin: "auto",
         }}
       >
-        <div className="text-3xl pb-5 xs:hidden sm:hidden md:flex">Meet Dom!!</div>
+        <div className="text-3xl pb-5 xs:hidden sm:hidden md:flex">
+          Meet Dom!!
+        </div>
         <motion.div
           drag
           style={{ x: motionValue, rotate: rotateValue, opacity: opacityValue }}
@@ -152,8 +158,7 @@ const Home = () => {
               borderRadius: "50%",
             }}
             onClick={() => {
-
-              swipe("right")
+              swipe("right");
             }}
           >
             <FaHeart
@@ -177,15 +182,17 @@ const Home = () => {
     case "right":
       return <Welcome />;
     default:
-      return <></>
+      return <></>;
       break;
   }
 };
 
 const HomeWrapper = () => {
-  return <Layout>
-    <Home />
-  </Layout>
-}
+  return (
+    <Layout>
+      <Home />
+    </Layout>
+  );
+};
 
 export default HomeWrapper;
