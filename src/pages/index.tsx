@@ -52,6 +52,8 @@ const Home = () => {
           onCardLeftScreen={(dir: "left" | "down" | "right" | "up") => {
             setSwipedState(stateMap[dir] as "left" | "current" | "right");
           }}
+          preventSwipe={["up", "down"]}
+
         >
           <div className="bg-white border-2 rounded-md">
             <div
