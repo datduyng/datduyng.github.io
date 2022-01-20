@@ -232,7 +232,9 @@ const Home = () => {
 
   switch (swipedState) {
     case "mid":
-      return <AnimatePresence>{homeComponents}</AnimatePresence>;
+      return <div className="px-5">
+        <AnimatePresence>{homeComponents}</AnimatePresence>
+      </div>;
     case "left":
       return <Oops />;
     case "right":
