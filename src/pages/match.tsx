@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { FaLinkedin, FaGithub, FaRegFilePdf } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaRegFilePdf, FaProductHunt } from "react-icons/fa";
 import Layout from "../components/layout";
 type ButtonType = {
   color: string;
@@ -18,6 +18,13 @@ const links: ButtonType[] = [
     newTab: true,
   },
   {
+    name: "Product Gallery",
+    color: "#1ab7ea",
+    icon: <FaProductHunt fontSize={20} color={"#fff"} />,
+    href: "/products",
+    newTab: false,
+  },
+  {
     name: "LinkedIn",
     color: "#2867B2",
     icon: <FaLinkedin fontSize={20} />,
@@ -28,7 +35,7 @@ const links: ButtonType[] = [
     name: "Github",
     color: "#6e5494",
     icon: <FaGithub fontSize={20} />,
-    href: "https://www.linkedin.com/in/datdnguyen/",
+    href: "https://www.github.com/datduyng/",
     newTab: true,
   },
 ];

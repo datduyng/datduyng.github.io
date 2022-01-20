@@ -2,7 +2,7 @@ import React, { createRef, useEffect, useState } from "react";
 import { FaHeart } from "react-icons/fa";
 import { VscChromeClose } from "react-icons/vsc";
 import { useRouter } from "next/router";
-import { Welcome } from "./welcome";
+import { Welcome } from "./match";
 import { Oops } from "./oops";
 import {
   AnimatePresence,
@@ -25,7 +25,7 @@ const Home = () => {
     if (dir === "left") {
       router.push("/oops");
     } else {
-      router.push("/welcome");
+      router.push("/match");
     }
   };
 
