@@ -15,6 +15,9 @@
   font-family: 'Dynalight', cursive;
 }
 
+.tastetext {
+  font-family: 'Dynalight';
+}
 * {
   box-sizing: border-box;
   margin: 0;
