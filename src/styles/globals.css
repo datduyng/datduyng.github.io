@@ -13,10 +13,11 @@
 }
 .mtext {
   font-family: 'Dynalight', cursive;
+  font-weight: 400;
 }
 
 .tastetext {
-  font-family: 'Dynalight';
+  font-family: Dynalight;
 }
 * {
   box-sizing: border-box;
