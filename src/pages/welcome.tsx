@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
-import { FaLinkedin, FaGithub,FaRegFilePdf } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaRegFilePdf } from "react-icons/fa";
+import Layout from "../components/layout";
 type ButtonType = {
   color: string;
   name: string;
@@ -12,7 +13,7 @@ const links: ButtonType[] = [
   {
     name: "My Resume",
     color: "#00ab6c",
-    icon: <FaRegFilePdf fontSize={20} color={"#fff"}/>,
+    icon: <FaRegFilePdf fontSize={20} color={"#fff"} />,
     href: "https://www.linkedin.com/in/datdnguyen/",
     newTab: true,
   },
@@ -65,27 +66,29 @@ const ButtonTemplate = ({
 };
 export default function Welcome() {
   return (
-    <div
-      className="flex flex-col"
-      style={{
-        justifyContent: "center",
-        alignContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <div className="text-red-600 mtext text-6xl mt-10 ">It's a match!</div>
+    <Layout>
+      <div
+        className="flex flex-col mx-5"
+        style={{
+          justifyContent: "center",
+          alignContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <div className="text-red-600 mtext text-6xl mt-10 ">It's a match!</div>
 
-      <div className="w-full mt-5 flex flex-col gap-6">
-        {links.map((link) => (
-          <ButtonTemplate
-            name={link.name}
-            icon={link.icon}
-            color={link.color}
-            href={link.href}
-            newTab={link.newTab}
-          />
-        ))}
+        <div className="w-full mt-5 flex flex-col gap-6">
+          {links.map((link) => (
+            <ButtonTemplate
+              name={link.name}
+              icon={link.icon}
+              color={link.color}
+              href={link.href}
+              newTab={link.newTab}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </Layout>
   );
 }

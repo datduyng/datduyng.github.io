@@ -11,6 +11,7 @@ import {
   useMotionValue,
   useTransform,
 } from "framer-motion";
+import Layout from "../components/layout";
 
 
 const SWIPE_THRESHOLD = 60;
@@ -176,8 +177,15 @@ const Home = () => {
     case "right":
       return <Welcome />;
     default:
+      return <></>
       break;
   }
 };
 
-export default Home;
+const HomeWrapper = () => {
+  return <Layout>
+    <Home />
+  </Layout>
+}
+
+export default HomeWrapper;

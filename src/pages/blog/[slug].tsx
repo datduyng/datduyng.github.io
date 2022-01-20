@@ -10,7 +10,7 @@ export default function PostPage({
   content,
 }: any) {
   return (
-    <>
+    <div className="mx-auto max-w-3xl h-full">
       <Link href="/">
         <a className="btn btn-back">Go Back</a>
       </Link>
@@ -22,7 +22,7 @@ export default function PostPage({
           <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -4,7 +4,7 @@ import type { AppProps } from "next/app";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <main className="max-w-lg mx-auto h-full">
+      <main className="">
         <Component {...pageProps} />
       </main>
     </>
