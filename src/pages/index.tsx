@@ -100,9 +100,8 @@ const Home = () => {
           justifyContent: "center",
           alignContent: "center",
           alignItems: "center",
-          width: "405px",
+          maxWidth: "405px",
           margin: "auto",
-          // gap:' 5px',
         }}
       >
         <div className="text-3xl pb-5 xs:hidden sm:hidden md:flex">Meet Dom!!</div>
