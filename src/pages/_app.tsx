@@ -4,8 +4,7 @@ import type { AppProps } from "next/app";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <header></header>
-      <main className="container">
+      <main className="max-w-lg mx-auto h-full">
         <Component {...pageProps} />
       </main>
     </>

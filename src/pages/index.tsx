@@ -115,7 +115,7 @@ const Home = () => {
           onDragEnd={(event, info) => {
             if (Math.abs(motionValue.get()) > SWIPE_THRESHOLD) {
               // remove();
-              console.log("remove info", event, info);
+              console.log("remove info", event, info, motionValue.get());
               setSwipeState(motionValue.get() > 0 ? "right" : "left");
             } else {
               animControls.start({ x: 0, y: 0 });
