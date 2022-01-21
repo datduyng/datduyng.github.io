@@ -85,7 +85,6 @@ export function Welcome() {
   const [itsaMatch, setItsaMatch] = useState<boolean | null>(null);
   useEffect(() => {
     if (router.isReady) {
-
       setItsaMatch(router.query.match !== undefined);
     }
   }, [router.isReady]);
@@ -106,17 +105,22 @@ export function Welcome() {
           className="flex flex-col justify-center items-center
         text-center"
         >
-          <div className="text-red-600 mtext text-4xl sm:text-6xl mt-10 font-bold">
-            It's a match!
+          <div className="deconstructed">
+            It's a match
+            <div>It's a match</div>
+            <div>It's a match</div>
+            <div>It's a match</div>
+            <div>It's a match</div>
           </div>
+          <div></div>
           <div className="flex flex-row gap-5 mt-5">
             <div
               style={{
-                backgroundColor: '#e17055',
+                backgroundColor: "#e17055",
                 backgroundSize: "contain",
                 minHeight: "150px",
                 minWidth: "150px",
-                borderRadius: '50%'
+                borderRadius: "50%",
               }}
             />
             <img
@@ -131,7 +135,7 @@ export function Welcome() {
           </div>
           <div className="text-base font-semibold mt-5">
             You can now connect with Dom on LinkedIn and Github!!
-            </div>
+          </div>
         </div>
       ) : (
         <div
