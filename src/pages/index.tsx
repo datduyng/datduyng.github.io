@@ -50,7 +50,9 @@ const Header = () => {
         <NavLink href="/projects">Projects</NavLink>
       </div>
       <div>
-        <NavLink href="/projects">Github</NavLink>
+        <NavLink href="https://github.com/datduyng/datduyng.github.io">
+          Github
+        </NavLink>
       </div>
     </nav>
   );
