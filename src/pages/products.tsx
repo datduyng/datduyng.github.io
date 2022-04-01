@@ -1,4 +1,4 @@
-import "../styles/old.module.css";
+// import "../styles/old.css";
 
 import { marked } from "marked";
 import Link from "next/link";
@@ -80,7 +80,9 @@ const Product = ({ product }: { product: ProductType }) => {
         <div className="w-full sm:w-4/5">
           <a href={product.mainHref} target={"_blank"}>
             <div>
-              <span className="font-semibold text-1xl md:text-2xl">{product.name} </span>
+              <span className="font-semibold text-1xl md:text-2xl">
+                {product.name}{" "}
+              </span>
               <span>
                 {"- "}
                 {product.tagLine}

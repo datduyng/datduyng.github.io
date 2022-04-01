@@ -1,5 +1,4 @@
-import "../styles/old.module.css";
-
+// import "../styles/old.css";
 
 import Link from "next/link";
 import { useRouter } from "next/router";

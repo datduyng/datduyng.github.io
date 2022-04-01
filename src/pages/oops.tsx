@@ -1,4 +1,4 @@
-import "../styles/old.css";
+// import "../styles/old.css";
 
 import React from "react";
 import Layout from "../components/layout";
