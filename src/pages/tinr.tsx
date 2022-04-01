@@ -4,7 +4,7 @@ import React, { createRef, useEffect, useState } from "react";
 import { FaHeart } from "react-icons/fa";
 import { VscChromeClose } from "react-icons/vsc";
 import { useRouter } from "next/router";
-import { Welcome } from ".";
+import { Welcome } from "./old";
 import { Oops } from "./oops";
 import {
   AnimatePresence,
@@ -20,11 +20,11 @@ const SWIPE_THRESHOLD = 60;
 const Heart = ({
   style,
   className,
-  fontSize
+  fontSize,
 }: {
   style?: React.CSSProperties;
   className?: string;
-  fontSize?: number
+  fontSize?: number;
 }) => {
   return (
     <FaHeart
@@ -46,7 +46,7 @@ const Nope = ({
 }: {
   style?: React.CSSProperties;
   className?: string;
-  fontSize?: number
+  fontSize?: number;
 }) => {
   return (
     <VscChromeClose
@@ -146,7 +146,7 @@ const Home = () => {
         }
         style={{
           position: "absolute",
-          transform: 'translate(-50%,0)',
+          transform: "translate(-50%,0)",
           top: "50%",
           left: "50%",
           zIndex: 2,
@@ -154,8 +154,14 @@ const Home = () => {
           pointerEvents: "none",
         }}
       >
-        <Heart style={{ display: action === "right" ? undefined : "none" }} fontSize={100}/>
-        <Nope style={{ display: action === "left" ? undefined : "none" }} fontSize={100} />
+        <Heart
+          style={{ display: action === "right" ? undefined : "none" }}
+          fontSize={100}
+        />
+        <Nope
+          style={{ display: action === "left" ? undefined : "none" }}
+          fontSize={100}
+        />
       </span>
       <div
         style={{
@@ -233,9 +239,11 @@ const Home = () => {
 
   switch (swipedState) {
     case "mid":
-      return <div className="px-5">
-        <AnimatePresence>{homeComponents}</AnimatePresence>
-      </div>;
+      return (
+        <div className="px-5">
+          <AnimatePresence>{homeComponents}</AnimatePresence>
+        </div>
+      );
     case "left":
       return <Oops />;
     case "right":

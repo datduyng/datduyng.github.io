@@ -1,12 +1,11 @@
-import "../styles/old.module.css";
+import "../styles/old.css";
 
 import React from "react";
-import { FaLinkedin, FaGithub, FaRegFilePdf } from "react-icons/fa";
 import Layout from "../components/layout";
 
 export function Oops() {
   return (
- <div
+    <div
       className="flex flex-col mt-20"
       style={{
         justifyContent: "center",
@@ -38,7 +37,10 @@ export function Oops() {
   );
 }
 
-
 export default function OopsWrap() {
-  return <Layout><Oops /></Layout>
+  return (
+    <Layout>
+      <Oops />
+    </Layout>
+  );
 }
