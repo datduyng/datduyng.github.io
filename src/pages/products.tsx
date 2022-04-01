@@ -28,6 +28,7 @@ const products: ProductType[] = [
       "/knugget-04.jpeg",
       "/knugget-05.jpeg",
     ],
+    description: `Collaboration with a friend from Germany where I worked on the ios ReactNative app and created a chrome extensiont to allow user clipnote from their browser`,
     web: "https://www.letsknugget.com/",
     mainHref: "https://www.letsknugget.com/",
     ios: "https://apps.apple.com/us/app/knugget-keep-it-in-mind/id1558672357#?platform=iphone",
