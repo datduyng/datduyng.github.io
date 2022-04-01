@@ -9,15 +9,16 @@ import FeaturedProjectCard from "../components/home-page-cards/featured-project-
 import ProjectListCard from "../components/home-page-cards/project-list-card";
 import LatestNoteCard from "../components/home-page-cards/latest-note-card";
 import FavoriteArtistCard from "../components/home-page-cards/favorite-artist-card";
-import { GetStaticProps } from "next";
+import { GetStaticProps, NextPage } from "next";
 import { getTopArtist, SpotifyArtist } from "../lib/spotify-client";
 import NoSsr from "../components/stateless/no-ssr";
+import RecentWatchCard from "../components/home-page-cards/recent-watch-card";
+import { getMyRecentWatch, LetterboxRssItem } from "../lib/letterboxd-client";
 
-export default function HomeIndex({
+const HomeIndex: NextPage<HomeProps> = ({
   favArtists,
-}: {
-  favArtists: SpotifyArtist[];
-}) {
+  recentWatch,
+}) => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   return (
     <div className={`mx-auto max-w-screen-md`}>
@@ -35,21 +36,22 @@ export default function HomeIndex({
          */}
         {isMobile ? (
           <NoSsr>
-            <CardList favArtists={favArtists} isMobile={true} />
+            <CardList favArtists={favArtists}  isMobile={true} recentWatch={recentWatch}/>
           </NoSsr>
         ) : (
-          <CardList favArtists={favArtists} isMobile={false} />
+          <CardList favArtists={favArtists} isMobile={false} recentWatch={recentWatch} />
         )}
       </div>
     </div>
   );
 }
 
-interface CardListProps {
-  favArtists: SpotifyArtist[];
+export default HomeIndex;
+
+type CardListProps = {
   isMobile: boolean;
-}
-const CardList: React.FC<CardListProps> = ({ favArtists, isMobile }) => {
+} & HomeProps;
+const CardList: React.FC<CardListProps> = ({ favArtists, isMobile, recentWatch }) => {
   return (
     <Masonry
       breakpointCols={isMobile ? 1 : 2}
@@ -59,6 +61,7 @@ const CardList: React.FC<CardListProps> = ({ favArtists, isMobile }) => {
       <ProjectListCard />
       <LatestNoteCard />
       <FavoriteArtistCard favArtists={favArtists} />
+      <RecentWatchCard recentWatch={recentWatch}/>
     </Masonry>
   );
 };
@@ -66,10 +69,17 @@ const CardList: React.FC<CardListProps> = ({ favArtists, isMobile }) => {
 const Spacer = () => <div className="h-7" />;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const favArtists = (await getTopArtist()) || null;
+  const favArtists = (await getTopArtist()) || [];
+  const recentWatch = (await getMyRecentWatch()) || [];
   return {
     props: {
       favArtists,
+      recentWatch,
     },
   };
 };
+
+interface HomeProps {
+  favArtists: SpotifyArtist[];
+  recentWatch: LetterboxRssItem[];
+}
