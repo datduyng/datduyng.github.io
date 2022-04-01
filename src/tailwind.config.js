@@ -10,7 +10,7 @@ module.exports = {
       'secondary-reallight': '#222222',
       'secondary-light': '#444444', 
       'secondary': '#888888',
-      'accent': '#F75858',
+      'accent': '#6d30b6',
       'text': '#ffffff',
       'gray': {
         800: '#1f2937'
