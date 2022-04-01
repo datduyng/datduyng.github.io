@@ -61,7 +61,6 @@ const Header = () => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const favArtists = (await getTopArtist()) || null;
-  console.log("favArtis", favArtists);
   return {
     props: {
       favArtists,
