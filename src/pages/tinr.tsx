@@ -1,3 +1,5 @@
+import "../styles/old.module.css";
+
 import React, { createRef, useEffect, useState } from "react";
 import { FaHeart } from "react-icons/fa";
 import { VscChromeClose } from "react-icons/vsc";

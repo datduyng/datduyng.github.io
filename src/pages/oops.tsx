@@ -1,4 +1,5 @@
-import Link from "next/link";
+import "../styles/old.module.css";
+
 import React from "react";
 import { FaLinkedin, FaGithub, FaRegFilePdf } from "react-icons/fa";
 import Layout from "../components/layout";

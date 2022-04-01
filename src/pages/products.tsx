@@ -1,3 +1,5 @@
+import "../styles/old.module.css";
+
 import { marked } from "marked";
 import Link from "next/link";
 import React from "react";
