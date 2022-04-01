@@ -3,6 +3,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
+    "build-only": "next build",
     "postbuild": "cp -a out/. ../build",
     "start": "next start"
   },
