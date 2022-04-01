@@ -1,4 +1,4 @@
-import { SpotifyArtist } from "../../lib/spotify-client";
+import { SpotifyArtist } from "../lib/spotify-client";
 import styles from "./grid-hex-image.module.css";
 import ReactTooltip from "react-tooltip";
 import NoSsr from './stateless/no-ssr';
