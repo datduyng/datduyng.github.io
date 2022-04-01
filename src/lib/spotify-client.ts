@@ -26,6 +26,17 @@ const getAccessToken = async () => {
   return response.json();
 };
 
+export const getTopArtist = async () => {
+  const { access_token } = await getAccessToken();
+  return fetch(`${TOP_TRACKS_ENDPOINT}?limit=${TOP_ARTIST_LIMIT}`, {
+    headers: {
+      Authorization: `Bearer ${access_token}`,
+    },
+  })
+    .then((res) => res.json())
+    .then((json) => json?.items) as Promise<SpotifyArtist[]>;
+};
+
 export interface SpotifyArtist {
   id: string;
   name: string;
@@ -40,14 +51,5 @@ export interface SpotifyArtist {
 }
 
 interface TopArtistResponse {
-  items: SpotifyArtist[]
+  items: SpotifyArtist[];
 }
-
-export const getTopArtist = async () => {
-  const { access_token } = await getAccessToken();
-  return fetch(`${TOP_TRACKS_ENDPOINT}?limit=${TOP_ARTIST_LIMIT}`, {
-    headers: {
-      Authorization: `Bearer ${access_token}`,
-    },
-  }).then((res) => res.json()).then(json => json?.items) as Promise<SpotifyArtist[]>;
-};
