@@ -1,7 +1,6 @@
-import cn from "classnames";
 import { SpotifyArtist } from "../../lib/spotify-client";
 import { HomePageCard } from "../stateless/card";
-import GridHexImage from "../stateless/grid-hex-image";
+import GridHexImage from "../grid-hex-image";
 
 export default function FavoriteArtistCard({
   favArtists,
