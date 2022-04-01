@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const NoSsr = ({ children }): JSX.Element => {
+const NoSsr: React.FC = ({ children }) => {
   const [isMounted, setMount] = useState(false);
 
   useEffect(() => {
