@@ -155,9 +155,7 @@ export function Welcome() {
           <div className="text-4xl font-semibold mt-6">Dominic Nguyen</div>
           <hr className="mt-2" />
           <div className="mt-2">
-            Howdy, I'm Dom. I'm a passionate Tech Lover from Seattle, WA. Apart
-            from that, I'm a software engineer and an opensource enthusiast
-            inspired by imagination
+        I'm a passionate Tech Lover from Seattle, WA. Apart from that, I'm an opensource enthusiast. Love ⛷️ 🧗 🏃‍♂️          
           </div>
         </div>
       )}
