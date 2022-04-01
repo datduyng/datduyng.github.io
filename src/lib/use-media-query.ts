@@ -8,7 +8,7 @@ function useMediaQuery(query: string): boolean {
       return window.matchMedia(query).matches;
     }
     // default render as mobile on the server
-    return false;
+    return true;
   };
 
   const [matches, setMatches] = useState<boolean>(getMatches(query));
@@ -31,7 +31,6 @@ function useMediaQuery(query: string): boolean {
     return () => {
       matchMedia.removeEventListener("change", handleChange);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query, isSsr]);
 
   return matches;

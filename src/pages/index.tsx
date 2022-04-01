@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import cn from "classnames";
+import React from "react";
 import Masonry from "react-masonry-css";
 
 import styles from "../styles/home.module.css";
@@ -10,7 +9,7 @@ import FeaturedProjectCard from "../components/home-page-cards/featured-project-
 import ProjectListCard from "../components/home-page-cards/project-list-card";
 import LatestNoteCard from "../components/home-page-cards/latest-note-card";
 import FavoriteArtistCard from "../components/home-page-cards/favorite-artist-card";
-import { GetStaticProps, NextPageContext } from "next";
+import { GetStaticProps } from "next";
 import { getTopArtist, SpotifyArtist } from "../lib/spotify-client";
 
 export default function HomeIndex({
