@@ -133,7 +133,6 @@ const Home = () => {
     "mid"
   );
   const [action, setAction] = useState<"left" | "mid" | "right">("mid");
-  console.log("motion", motionValue.get());
 
   const homeComponents = (
     <motion.div
