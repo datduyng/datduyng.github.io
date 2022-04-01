@@ -2,9 +2,9 @@ import React from "react";
 import Masonry from "react-masonry-css";
 
 import styles from "../styles/home.module.css";
-import NavLink from "../components/nav-link";
 import useMediaQuery from "../lib/use-media-query";
 import HeaderCard from "../components/home-page-cards/header-card";
+import Header from "../components/header";
 import FeaturedProjectCard from "../components/home-page-cards/featured-project-card";
 import ProjectListCard from "../components/home-page-cards/project-list-card";
 import LatestNoteCard from "../components/home-page-cards/latest-note-card";
@@ -64,23 +64,6 @@ const CardList: React.FC<CardListProps> = ({ favArtists, isMobile }) => {
 };
 
 const Spacer = () => <div className="h-7" />;
-
-const Header = () => {
-  return (
-    <nav className="flex items-center justify-between w-full text-secondary pt-8">
-      <div>
-        <NavLink href="/">Home</NavLink>
-        <NavLink href="/notes">Notes</NavLink>
-        <NavLink href="/projects">Projects</NavLink>
-      </div>
-      <div>
-        <NavLink href="https://github.com/datduyng/datduyng.github.io">
-          Github
-        </NavLink>
-      </div>
-    </nav>
-  );
-};
 
 export const getStaticProps: GetStaticProps = async () => {
   const favArtists = (await getTopArtist()) || null;
