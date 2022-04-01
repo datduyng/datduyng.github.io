@@ -1,18 +1,21 @@
 import { GetStaticProps } from "next";
 import { getTopArtist, SpotifyArtist } from "../../lib/spotify-client";
 import styles from "./grid-hex-image.module.css";
+import Tooltip from "./tooltip";
 
 export function HexImage({ favArtist }: { favArtist: SpotifyArtist }) {
   const imageLink = favArtist.images?.[0].url;
   return (
     <div className={styles["hex"]}>
-      <img
-        className={styles["img-hex"]}
-        src={imageLink}
-        alt="some"
-        height={90}
-        width={90}
-      />
+      <Tooltip value={favArtist.external_urls.spotify}>
+        <img
+          className={styles["img-hex"]}
+          src={imageLink}
+          alt="some"
+          height={90}
+          width={90}
+        />
+      </Tooltip>
     </div>
   );
 }

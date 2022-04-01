@@ -7,6 +7,7 @@ function useMediaQuery(query: string): boolean {
     if (typeof window !== "undefined") {
       return window.matchMedia(query).matches;
     }
+    // default render as mobile on the server
     return false;
   };
 
@@ -15,6 +16,8 @@ function useMediaQuery(query: string): boolean {
   function handleChange() {
     setMatches(getMatches(query));
   }
+
+  const isSsr = typeof window === "undefined";
 
   useEffect(() => {
     const matchMedia = window.matchMedia(query);
@@ -29,7 +32,7 @@ function useMediaQuery(query: string): boolean {
       matchMedia.removeEventListener("change", handleChange);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [query]);
+  }, [query, isSsr]);
 
   return matches;
 }

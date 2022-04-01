@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import cn from "classnames";
 import Masonry from "react-masonry-css";
-import Image from "next/image";
 
 import styles from "../styles/home.module.css";
 import NavLink from "../components/nav-link";
@@ -20,7 +19,6 @@ export default function HomeIndex({
   favArtists: SpotifyArtist[];
 }) {
   const isMobile = useMediaQuery("(max-width: 768px)");
-
   return (
     <div className={`mx-auto max-w-screen-md`}>
       <div className="flex flex-col justify-center items-center">
