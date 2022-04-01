@@ -8,7 +8,7 @@ function useMediaQuery(query: string): boolean {
       return window.matchMedia(query).matches;
     }
     // default render as mobile on the server
-    return true;
+    return false;
   };
 
   const [matches, setMatches] = useState<boolean>(getMatches(query));

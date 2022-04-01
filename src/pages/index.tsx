@@ -11,6 +11,7 @@ import LatestNoteCard from "../components/home-page-cards/latest-note-card";
 import FavoriteArtistCard from "../components/home-page-cards/favorite-artist-card";
 import { GetStaticProps } from "next";
 import { getTopArtist, SpotifyArtist } from "../lib/spotify-client";
+import NoSsr from "../components/stateless/no-ssr";
 
 export default function HomeIndex({
   favArtists,
@@ -25,19 +26,42 @@ export default function HomeIndex({
         <Spacer />
         <HeaderCard />
         <Spacer />
-        <Masonry
-          breakpointCols={isMobile ? 1 : 2}
-          className={styles["masonry-grid"]}
-        >
-          <FeaturedProjectCard />
-          <ProjectListCard />
-          <LatestNoteCard />
-          <FavoriteArtistCard favArtists={favArtists} />
-        </Masonry>
+        {/* HACK: for now render mobile view without ssr.
+         * react-masonry-css doesn't support ssr as on the server,
+         * the library would render this grid in desktop view but
+         * if user has a mobile, then this library won't automatically
+         * update the column size. How to fix? fork this react-masonry-css library
+         * or use a different one
+         */}
+        {isMobile ? (
+          <NoSsr>
+            <CardList favArtists={favArtists} isMobile={true} />
+          </NoSsr>
+        ) : (
+          <CardList favArtists={favArtists} isMobile={false} />
+        )}
       </div>
     </div>
   );
 }
+
+interface CardListProps {
+  favArtists: SpotifyArtist[];
+  isMobile: boolean;
+}
+const CardList: React.FC<CardListProps> = ({ favArtists, isMobile }) => {
+  return (
+    <Masonry
+      breakpointCols={isMobile ? 1 : 2}
+      className={styles["masonry-grid"]}
+    >
+      <FeaturedProjectCard />
+      <ProjectListCard />
+      <LatestNoteCard />
+      <FavoriteArtistCard favArtists={favArtists} />
+    </Masonry>
+  );
+};
 
 const Spacer = () => <div className="h-7" />;
 
