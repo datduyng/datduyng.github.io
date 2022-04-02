@@ -2,11 +2,13 @@ const SPOTIFY_CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
 const SPOTIFY_CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
 const SPOTIFY_REFRESH_TOKEN = process.env.SPOTIFY_REFRESH_TOKEN;
 
+
 const basic = Buffer.from(
   `${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`
 ).toString("base64");
 const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/me/top/artists`;
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
+const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
 
 const TOP_ARTIST_LIMIT = 8;
 
@@ -50,6 +52,16 @@ export interface SpotifyArtist {
   }[];
 }
 
-interface TopArtistResponse {
-  items: SpotifyArtist[];
+export const getSpotifyPlaying = async () => {
+  const { access_token } = await getAccessToken();
+
+  return fetch(NOW_PLAYING_ENDPOINT, {
+    headers: {
+      Authorization: `Bearer ${access_token}`
+    }
+  }).then(res => res.json() as Promise<SpotifyPlaying>);
+};
+
+export interface SpotifyPlaying {
+  is_playing: boolean;
 }

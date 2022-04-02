@@ -3,6 +3,7 @@ module.exports = {
     domains: [
       "a.ltrbxd.com", //letterboxd
       "i.scdn.co", // spotify
+      "domnguyen.notion.site", //notion
     ],
   },
 };

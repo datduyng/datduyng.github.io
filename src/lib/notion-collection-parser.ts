@@ -35,7 +35,7 @@ export default class NotionCollectionParser<T> {
       return null;
     }
     Object.entries(collection.value.schema).forEach(([key, value]) => {
-      this.collectionPropSchemaMap[value.name] = {
+      this.collectionPropSchemaMap[value.name?.toLocaleLowerCase()] = {
         ...value,
         keyId: key,
       };
@@ -61,7 +61,7 @@ export default class NotionCollectionParser<T> {
     };
 
     this.schemaKeys.forEach((key) => {
-      const propSchema = this.collectionPropSchemaMap[key];
+      const propSchema = this.collectionPropSchemaMap[key.toLocaleLowerCase()];
       if (!propSchema) {
         return;
       }
@@ -78,6 +78,7 @@ export default class NotionCollectionParser<T> {
           break;
         }
         case "text":
+        case "url":
         case "title": {
           value = notionValue?.[0]?.[0];
           break;
@@ -91,7 +92,7 @@ export default class NotionCollectionParser<T> {
           break;
         }
         default: {
-          console.warn("Unhandled notion schema type", notionValue);
+          console.warn("Unhandled notion schema type of ",propSchema, 'with value', notionValue);
         }
       }
 

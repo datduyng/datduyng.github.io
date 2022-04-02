@@ -19,14 +19,13 @@ const Collection = dynamic(() =>
   )
 )
 
-
 const NoteIdPage: NextPage<NoteProps> = ({ recordMap }) => {
   return (
     <DefaultLayout>
-      {recordMap && <NotionRenderer 
-        recordMap={recordMap} 
-        fullPage={true} 
-        darkMode={true} 
+      {recordMap && <NotionRenderer
+        recordMap={recordMap}
+        fullPage={true}
+        darkMode={true}
         disableHeader={true}
         components={{
           nextImage: Image,
@@ -37,7 +36,7 @@ const NoteIdPage: NextPage<NoteProps> = ({ recordMap }) => {
         showTableOfContents={true}
         minTableOfContentsItems={1}
         previewImages={!!recordMap.preview_images}
-        />}
+      />}
     </DefaultLayout>
   );
 };
@@ -45,9 +44,10 @@ const NoteIdPage: NextPage<NoteProps> = ({ recordMap }) => {
 export default NoteIdPage;
 
 const notionApi = new NotionAPI();
-export const getStaticProps: GetStaticProps = async ({params}) => {
-try {
-    const recordMap = await notionApi.getPage(params?.noteId as string);
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  try {
+    let noteId = (params?.noteId as string)?.split('-')?.[0];
+    const recordMap = await notionApi.getPage(noteId);
     if (!recordMap) {
       return {
         notFound: true,

@@ -9,7 +9,7 @@ export default function LatestNoteCard({ note }: { note?: NoteListSchema }) {
       <div className="h-[1px] bg-secondary-reallight my-4" />
       <h5 className="font-semibold">{note?.name}</h5>
       <p className="text-secondary mt-3">{note?.previewDesc}</p>
-      <button className="bg-accent mt-4 p-2 rounded-xl">
+      <button className="accent-body-bg mt-4 p-2 rounded-xl">
         <Link href="/notes">Explore all notes</Link>
       </button>
     </HomePageCard>
