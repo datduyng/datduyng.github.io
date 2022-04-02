@@ -1,7 +1,8 @@
 import { SpotifyArtist } from "../lib/spotify-client";
 import styles from "./grid-hex-image.module.css";
 import ReactTooltip from "react-tooltip";
-import NoSsr from './stateless/no-ssr';
+import NoSsr from "./stateless/no-ssr";
+import Image from "next/image";
 
 export function HexImage({ favArtist }: { favArtist: SpotifyArtist }) {
   const imageLink = favArtist.images?.[0].url;
@@ -14,12 +15,13 @@ export function HexImage({ favArtist }: { favArtist: SpotifyArtist }) {
         window.open(favArtist?.external_urls?.spotify, "_blank");
       }}
     >
-      <img
+      <Image
         className={styles["img-hex"]}
         src={imageLink}
-        alt="some"
+        alt={`Favorite artist ${favArtist.name}`}
         height={90}
         width={90}
+        placeholder={"blur"}
       />
     </div>
   );
@@ -38,7 +40,7 @@ export default function GridHexImage({
         ))}
       </section>
       <NoSsr>
-        <ReactTooltip id="fav-artists"/>
+        <ReactTooltip id="fav-artists" />
       </NoSsr>
     </>
   );
