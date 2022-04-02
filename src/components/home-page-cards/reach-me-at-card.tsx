@@ -12,9 +12,7 @@ export default function ReachMeAtCard() {
 }
 
 const LinkButton: React.FC<{ href: string; value: string; }> = ({ href, value }) => {
-  return <button className="bg-secondary-light mt-4 p-2 rounded-xl">
-    <Link href={href} passHref>
-      <a target="_blank">{value}</a>
-    </Link>
-  </button>
+  return (<Link href={href} passHref>
+    <a target="_blank"><button className="bg-secondary-light mt-4 p-2 rounded-xl">{value}</button></a>
+  </Link>)
 }
