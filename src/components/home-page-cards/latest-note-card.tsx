@@ -3,7 +3,6 @@ import { HomePageCard } from "../stateless/card";
 import { NoteListSchema } from "../../lib/notion-api-client";
 
 export default function LatestNoteCard({ note }: { note?: NoteListSchema }) {
-  console.log("notes", note);
   return (
     <HomePageCard>
       <h3 className="text-lg self-center">📝 Latest note</h3>
