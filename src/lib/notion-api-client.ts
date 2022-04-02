@@ -1,12 +1,14 @@
+import { NotionAPI } from "notion-client";
 import NotionCollectionParser from "./notion-collection-parser";
 
 const NOTION_NOTES_COLLECTION_ID = process.env.NOTION_NOTES_COLLECTION_ID;
 const NOTION_NOTES_COLLECTION_VIEW_ID =
   process.env.NOTION_NOTES_COLLECTION_VIEW_ID;
+const NOTION_PROJECT_PAGE_ID = process.env.NOTION_PROJECT_PAGE_ID;
 
-if (!NOTION_NOTES_COLLECTION_ID || !NOTION_NOTES_COLLECTION_VIEW_ID) {
+if (!NOTION_NOTES_COLLECTION_ID || !NOTION_NOTES_COLLECTION_VIEW_ID || !NOTION_PROJECT_PAGE_ID) {
   throw new Error(
-    "Invalid NOTION_NOTES_COLLECTION_ID and NOTION_NOTES_COLLECTION_ID"
+    "Invalid NOTION_NOTES_COLLECTION_ID,  NOTION_NOTES_COLLECTION_ID, or NOTION_PROJECT_PAGE_ID"
   );
 }
 
@@ -51,3 +53,15 @@ export const getMyNotionNoteListData = async () => {
 
   return notionCollectionParser.getListPreview();
 };
+
+const notionApi = new NotionAPI();
+
+export const getProjectPageRecordMap = async () => {
+  try {
+    const recordMap = await notionApi.getPage(NOTION_PROJECT_PAGE_ID);
+    return recordMap
+  } catch (e) {
+    console.error('Getting notion project page id error', e);
+    return null;
+  }
+}

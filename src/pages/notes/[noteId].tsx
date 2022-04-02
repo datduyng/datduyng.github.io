@@ -45,7 +45,6 @@ const NoteIdPage: NextPage<NoteProps> = ({ recordMap }) => {
 export default NoteIdPage;
 
 const notionApi = new NotionAPI();
-const demo = '067dd719a912471ea9a3ac10710e7fdf';
 export const getStaticProps: GetStaticProps = async ({params}) => {
 try {
     const recordMap = await notionApi.getPage(params?.noteId as string);
