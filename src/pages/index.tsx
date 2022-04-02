@@ -16,39 +16,48 @@ import RecentWatchCard from "../components/home-page-cards/recent-watch-card";
 import { getMyRecentWatch, LetterboxRssItem } from "../lib/letterboxd-client";
 import DefaultLayout from "../components/default-layout";
 
-const HomeIndex: NextPage<HomeProps> = ({
-  favArtists,
-  recentWatch,
-}) => {
+const HomeIndex: NextPage<HomeProps> = ({ favArtists, recentWatch }) => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   return (
     <DefaultLayout>
       <HeaderCard />
       <Spacer />
       {/* HACK: for now render mobile view without ssr.
-         * react-masonry-css doesn't support ssr as on the server,
-         * the library would render this grid in desktop view but
-         * if user has a mobile, then this library won't automatically
-         * update the column size. How to fix? fork this react-masonry-css library
-         * or use a different one
-         */}
+       * react-masonry-css doesn't support ssr as on the server,
+       * the library would render this grid in desktop view but
+       * if user has a mobile, then this library won't automatically
+       * update the column size. How to fix? fork this react-masonry-css library
+       * or use a different one
+       */}
       {isMobile ? (
         <NoSsr>
-          <CardList favArtists={favArtists} isMobile={true} recentWatch={recentWatch} />
+          <CardList
+            favArtists={favArtists}
+            isMobile={true}
+            recentWatch={recentWatch}
+          />
         </NoSsr>
       ) : (
-        <CardList favArtists={favArtists} isMobile={false} recentWatch={recentWatch} />
+        <CardList
+          favArtists={favArtists}
+          isMobile={false}
+          recentWatch={recentWatch}
+        />
       )}
     </DefaultLayout>
   );
-}
+};
 
 export default HomeIndex;
 
 type CardListProps = {
   isMobile: boolean;
 } & HomeProps;
-const CardList: React.FC<CardListProps> = ({ favArtists, isMobile, recentWatch }) => {
+const CardList: React.FC<CardListProps> = ({
+  favArtists,
+  isMobile,
+  recentWatch,
+}) => {
   return (
     <Masonry
       breakpointCols={isMobile ? 1 : 2}
