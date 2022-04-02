@@ -19,7 +19,7 @@ import DefaultLayout from "../components/default-layout";
 const HomeIndex: NextPage<HomeProps> = ({ favArtists, recentWatch }) => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   return (
-    <DefaultLayout>
+    <DefaultLayout className="items-center">
       <HeaderCard />
       <Spacer />
       {/* HACK: for now render mobile view without ssr.

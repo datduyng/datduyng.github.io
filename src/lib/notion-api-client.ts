@@ -20,12 +20,16 @@ const noteListSchema = [
 ] as const;
 
 export type NoteListSchema = {
+  id: string;
   name?: string;
   previewDesc?: string;
   published?: string;
   archived?: boolean;
   publishedDate?: string;
   tags?: string[];
+  page_cover?: string | undefined;
+  page_icon?: string | undefined;
+  page_emoji?: string | undefined;
 };
 
 export const getMyNotionNoteListData = async () => {

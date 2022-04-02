@@ -3,7 +3,7 @@ import Card from "../stateless/card";
 
 export default function HeaderCard() {
   return (
-    <Card className="flex flex-row flex-wrap-reverse sm:flex-nowrap px-8 py-8">
+    <Card className="flex flex-row flex-wrap-reverse sm:flex-nowrap px-5 py-8">
       <div>
         <h1 className="text-4xl font-bold">Dominic Nguyen</h1>
         <h3 className="text-2xl font-bold mt-2">Tech @ Microsoft</h3>

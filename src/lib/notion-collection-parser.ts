@@ -50,13 +50,7 @@ export default class NotionCollectionParser<T> {
       .filter((block) => block);
   }
 
-  private getBlockPreview(blockId: string):
-    | (T & {
-        page_cover?: string;
-        page_icon?: string;
-        page_emoji?: string;
-      })
-    | null {
+  private getBlockPreview(blockId: string): T | null {
     const block = this.notionCollection.recordMap.block[blockId];
     if (!block) {
       return null;
@@ -129,6 +123,6 @@ export default class NotionCollectionParser<T> {
       }
     }
 
-    return resultMap;
+    return resultMap as T;
   }
 }
