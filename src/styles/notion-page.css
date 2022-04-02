@@ -641,8 +641,8 @@ svg.notion-page-icon {
 
 .notion-page {
   width: var(--notion-max-width);
-  padding-left: calc(min(16px, 8vw));
-  padding-right: calc(min(16px, 8vw));
+  padding-left: calc(min(3px, 2vw));
+  padding-right: calc(min(3px, 2vw));
 }
 
 .notion-full-width {
@@ -1145,8 +1145,7 @@ svg.notion-page-icon {
 .notion-collection-header-title {
   display: inline-flex;
   align-items: center;
-  font-size: 1.25em;
-  line-height: 1.2;
+  @apply text-4xl;
   font-weight: 600;
   white-space: pre-wrap;
   word-break: break-word;
@@ -1439,7 +1438,7 @@ svg.notion-page-icon {
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   grid-auto-rows: 1fr;
   gap: 16px;
-  border-top: 1px solid var(--fg-color-1);
+  /* border-top: 1px solid var(--fg-color-1); */
   padding-top: 16px;
   padding-bottom: 4px;
 }
