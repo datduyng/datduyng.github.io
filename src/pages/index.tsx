@@ -107,7 +107,6 @@ export const getStaticProps: GetStaticProps = async () => {
   );
   const projects = (await getFeaturedProjectListSchema()) || [];
   const nowSpotifyPlaying = (await getSpotifyPlaying()) || null;
-  console.log("nowSpotifyPlaying", nowSpotifyPlaying)
   return {
     props: {
       favArtists,
