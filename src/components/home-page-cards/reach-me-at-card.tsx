@@ -1,6 +1,4 @@
 import { HomePageCard } from '../stateless/card';
-import Image from 'next/image';
-import Link from 'next/link';
 
 export default function ReachMeAtCard() {
   return <HomePageCard>
@@ -12,7 +10,9 @@ export default function ReachMeAtCard() {
 }
 
 const LinkButton: React.FC<{ href: string; value: string; }> = ({ href, value }) => {
-  return (<Link href={href} passHref>
-    <a target="_blank"><button className="bg-secondary-light mt-4 p-2 rounded-xl">{value}</button></a>
-  </Link>)
+  return <button className="bg-secondary-light mt-4 p-2 rounded-xl" onClick={() => {
+    window.open(href, '_blank');
+  }}>
+    {value}
+  </button>
 }
