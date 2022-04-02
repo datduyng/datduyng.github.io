@@ -95,7 +95,7 @@ export const getFeaturedProjectListSchema = async () => {
       }
     );
 
-  const notionCollectionParser = new NotionCollectionParser<projectListSchema>(
+  const notionCollectionParser = new NotionCollectionParser<ProjectListSchema>(
     NOTION_FEATURED_PROJECT_COLLECTION_ID,
     notionCollection,
     projectListSchema as any
