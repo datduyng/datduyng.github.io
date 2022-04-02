@@ -1,6 +1,7 @@
 import cn from "classnames";
 interface CardProps {
   className?: string;
+  noBorder?: boolean;
 }
 
 const Card: React.FC<CardProps> = ({ children, className }) => {

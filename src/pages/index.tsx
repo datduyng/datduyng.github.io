@@ -14,6 +14,7 @@ import { getTopArtist, SpotifyArtist } from "../lib/spotify-client";
 import NoSsr from "../components/stateless/no-ssr";
 import RecentWatchCard from "../components/home-page-cards/recent-watch-card";
 import { getMyRecentWatch, LetterboxRssItem } from "../lib/letterboxd-client";
+import DefaultLayout from "../components/default-layout";
 
 const HomeIndex: NextPage<HomeProps> = ({
   favArtists,
@@ -21,28 +22,24 @@ const HomeIndex: NextPage<HomeProps> = ({
 }) => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   return (
-    <div className={`mx-auto max-w-screen-md`}>
-      <div className="flex flex-col justify-center items-center">
-        <Header />
-        <Spacer />
-        <HeaderCard />
-        <Spacer />
-        {/* HACK: for now render mobile view without ssr.
+    <DefaultLayout>
+      <HeaderCard />
+      <Spacer />
+      {/* HACK: for now render mobile view without ssr.
          * react-masonry-css doesn't support ssr as on the server,
          * the library would render this grid in desktop view but
          * if user has a mobile, then this library won't automatically
          * update the column size. How to fix? fork this react-masonry-css library
          * or use a different one
          */}
-        {isMobile ? (
-          <NoSsr>
-            <CardList favArtists={favArtists}  isMobile={true} recentWatch={recentWatch}/>
-          </NoSsr>
-        ) : (
-          <CardList favArtists={favArtists} isMobile={false} recentWatch={recentWatch} />
-        )}
-      </div>
-    </div>
+      {isMobile ? (
+        <NoSsr>
+          <CardList favArtists={favArtists} isMobile={true} recentWatch={recentWatch} />
+        </NoSsr>
+      ) : (
+        <CardList favArtists={favArtists} isMobile={false} recentWatch={recentWatch} />
+      )}
+    </DefaultLayout>
   );
 }
 
@@ -61,7 +58,7 @@ const CardList: React.FC<CardListProps> = ({ favArtists, isMobile, recentWatch }
       <ProjectListCard />
       <LatestNoteCard />
       <FavoriteArtistCard favArtists={favArtists} />
-      <RecentWatchCard recentWatch={recentWatch}/>
+      <RecentWatchCard recentWatch={recentWatch} />
     </Masonry>
   );
 };
