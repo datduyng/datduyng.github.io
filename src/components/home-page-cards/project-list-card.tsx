@@ -30,7 +30,7 @@ const ProjectItem: React.FC<{ project: ProjectListSchema }> = ({ project }) => {
   return (<div className={cn('flex flex-row gap-3', project.url ? 'cursor-pointer' : '')} onClick={project.url ? onClick : undefined}>
     <div className='self-center flex-shrink-0'>
       {project.page_icon ? <Image className='rounded-lg' src={project.page_icon} width={60} height={60} />
-        : <div className='text-xl'>
+        : <div className='text-6xl'>
           {project.page_emoji || "🧸"}
         </div>}
     </div>
