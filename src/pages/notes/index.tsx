@@ -34,7 +34,6 @@ const NoteHeaderCard = ({ title, desc }: { title: string; desc: string }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   let allNotes = (await getMyNotionNoteListData()) || [];
-  console.log("allNotes", allNotes);
   const notes = allNotes.filter((n) => n?.published && !n?.archived && n?.name);
   const archivedNotes = allNotes.filter(
     (n) => n?.published && n?.archived && n?.name
