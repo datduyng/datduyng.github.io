@@ -10,7 +10,7 @@ export default function ProjectListCard({ projects }: { projects: ProjectListSch
     <h3 className='text-lg self-center'>🕹️ Projects</h3>
     <div className='h-[1px] bg-secondary-reallight my-4' />
     <div className='flex flex-col gap-3'>
-      {projects.map(project => <ProjectItem project={project} />)}
+      {projects.map(project => <ProjectItem key={project.id} project={project} />)}
     </div>
     <button className='bg-secondary-light mt-4 p-2 rounded-xl'>Explore all projects</button>
   </HomePageCard>
@@ -30,7 +30,7 @@ const ProjectItem: React.FC<{ project: ProjectListSchema }> = ({ project }) => {
   return (<div className={cn('flex flex-row gap-3', project.url ? 'cursor-pointer' : '')} onClick={project.url ? onClick : undefined}>
     <div className='self-center flex-shrink-0'>
       {project.page_icon ? <Image className='rounded-lg' src={project.page_icon} width={60} height={60} />
-        : <div className='text-6xl'>
+        : <div className='text-xl'>
           {project.page_emoji || "🧸"}
         </div>}
     </div>

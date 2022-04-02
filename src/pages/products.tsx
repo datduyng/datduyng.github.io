@@ -1,4 +1,4 @@
-// import "../styles/old.css";
+/* eslint-disable */ 
 
 import { marked } from "marked";
 import Link from "next/link";
@@ -73,12 +73,12 @@ const Product = ({ product }: { product: ProductType }) => {
       <hr />
       <div className="flex flex-wrap sm:flex-nowrap flex-row gap-7 mt-5 justify-center md:justify-between w-full">
         <div className="">
-          <a href={product.mainHref} target={"_blank"}>
+          <a href={product.mainHref} target={"_blank"} rel="noreferrer">
             <img src={product.icon} className="w-32 h-32 rounded-3xl " />
           </a>
         </div>
         <div className="w-full sm:w-4/5">
-          <a href={product.mainHref} target={"_blank"}>
+          <a href={product.mainHref} target={"_blank"} rel="noreferrer">
             <div>
               <span className="font-semibold text-1xl md:text-2xl">
                 {product.name}{" "}
@@ -91,7 +91,7 @@ const Product = ({ product }: { product: ProductType }) => {
           </a>
           <div>
             {product?.web && (
-              <a href={product.web} target={"_blank"}>
+              <a href={product.web} target={"_blank"} rel="noreferrer">
                 <img
                   src="/available-on-the-web.png"
                   className="w-28 inline-block m-2"
@@ -99,7 +99,7 @@ const Product = ({ product }: { product: ProductType }) => {
               </a>
             )}
             {product?.ios && (
-              <a href={product.ios} target={"_blank"}>
+              <a href={product.ios} target={"_blank"} rel="noreferrer">
                 <img
                   src="/download-on-appstore.png"
                   className="w-28 inline-block m-2"
@@ -107,7 +107,7 @@ const Product = ({ product }: { product: ProductType }) => {
               </a>
             )}
             {product?.android && (
-              <a href={product.android} target={"_blank"}>
+              <a href={product.android} target={"_blank"} rel="noreferrer">
                 <img
                   src="/get-it-on-google-play.png"
                   className="w-36 inline-block m-2"
@@ -115,7 +115,7 @@ const Product = ({ product }: { product: ProductType }) => {
               </a>
             )}
             {product?.chromewebstore && (
-              <a href={product.chromewebstore} target={"_blank"}>
+              <a href={product.chromewebstore} target={"_blank"} rel="noreferrer">
                 <img
                   src="/available-in-chrome-web-store.png"
                   className="inline-block m-2 w-36"

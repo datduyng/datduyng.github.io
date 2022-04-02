@@ -14,7 +14,7 @@ export default function FavoriteArtistCard({
   return (
     <HomePageCard className="bg-[#EFEFEF]">
       <h3 className="text-lg self-center text-main">
-        These day I'm jaming to 🎧
+        {`These day I'm jaming to 🎧`}
       </h3>
       <div className="mt-5" />
       <GridHexImage favArtists={favArtists} />

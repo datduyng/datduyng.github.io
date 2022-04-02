@@ -13,7 +13,7 @@ export default function HeaderCard() {
         </p>
       </div>
       <div className="self-center flex-shrink-0">
-        <Image src="/avatar.png" width={120} height={120} />
+        <Image src="/avatar.png" width={120} height={120} alt="Dominic Nguyen Avatar"/>
       </div>
     </Card>
   );

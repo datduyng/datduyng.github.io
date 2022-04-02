@@ -118,7 +118,7 @@ const Home = () => {
       <div className="p-3">
         <p className="text-xl">Dominic Nguyen</p>
         <p className="text-base text-slate-400">@datduyng</p>
-        <p className="pb-3">Just vib'in. ❤️ Open source.</p>
+        <p className="pb-3">{`Just vib'in. ❤️ Open source.`}</p>
         <hr />
         <div className="text-sm pt-3">
           he/him, 5'9. I like to work out 🏋️‍♂️ rock climbing 🧗 skiing ⛷️ running

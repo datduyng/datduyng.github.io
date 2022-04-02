@@ -73,7 +73,7 @@ const ButtonTemplate = ({
   return (
     <div>
       {newTab ? (
-        <a target="_blank" href={href}>
+        <a target="_blank" href={href} rel="noreferrer">
           {buttonContent}
         </a>
       ) : (
@@ -108,11 +108,11 @@ export function Welcome() {
         text-center"
         >
           <div className="deconstructed">
-            It's a match
-            <div>It's a match</div>
-            <div>It's a match</div>
-            <div>It's a match</div>
-            <div>It's a match</div>
+            {`It's a match`}
+            <div>{`It's a match`}</div>
+            <div>{`It's a match`}</div>
+            <div>{`It's a match`}</div>
+            <div>{`It's a match`}</div>
           </div>
           <div></div>
           <div className="flex flex-row gap-5 mt-5">

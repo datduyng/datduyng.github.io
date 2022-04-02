@@ -24,6 +24,7 @@ const RecentWatchCard: React.FC<RecentWatchCardProps> = ({ recentWatch }) => {
         <ul className={cn(styles["gallery"])}>
           {recentWatch?.map((movie, index) => (
             <li
+              key={"" + movie?.film?.title + movie?.film?.title + "-" + index}
               className={cn(
                 "cursor-pointer",
                 styles["gallery-item"],
