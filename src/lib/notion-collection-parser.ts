@@ -57,7 +57,7 @@ export default class NotionCollectionParser<T> {
     }
 
     const resultMap: { [key: string]: any } = {
-      id: blockId,
+      id: blockId?.replace(/-/gi, ""),
     };
 
     this.schemaKeys.forEach((key) => {

@@ -16,6 +16,7 @@ const NoteList: React.FC<NoteListProps> = ({ notes }) => {
     <div className="flex flex-col gap-5 w-full">
       {notes.map((note) => (
         <NoteCardItem
+          key={note.id}
           onClick={() => {
             router.push(`notes/${note.id}`);
           }}
