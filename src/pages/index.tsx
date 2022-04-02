@@ -3,8 +3,11 @@ import Masonry from "react-masonry-css";
 
 import styles from "../styles/home.module.css";
 import useMediaQuery from "../lib/use-media-query";
+import {
+  getMyNotionNoteListData,
+  NoteListSchema,
+} from "../lib/notion-api-client";
 import HeaderCard from "../components/home-page-cards/header-card";
-import Header from "../components/header";
 import FeaturedProjectCard from "../components/home-page-cards/featured-project-card";
 import ProjectListCard from "../components/home-page-cards/project-list-card";
 import LatestNoteCard from "../components/home-page-cards/latest-note-card";
@@ -16,7 +19,11 @@ import RecentWatchCard from "../components/home-page-cards/recent-watch-card";
 import { getMyRecentWatch, LetterboxRssItem } from "../lib/letterboxd-client";
 import DefaultLayout from "../components/default-layout";
 
-const HomeIndex: NextPage<HomeProps> = ({ favArtists, recentWatch }) => {
+const HomeIndex: NextPage<HomeProps> = ({
+  favArtists,
+  recentWatch,
+  latestNote,
+}) => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   return (
     <DefaultLayout className="items-center">
@@ -35,6 +42,7 @@ const HomeIndex: NextPage<HomeProps> = ({ favArtists, recentWatch }) => {
             favArtists={favArtists}
             isMobile={true}
             recentWatch={recentWatch}
+            latestNote={latestNote}
           />
         </NoSsr>
       ) : (
@@ -42,6 +50,7 @@ const HomeIndex: NextPage<HomeProps> = ({ favArtists, recentWatch }) => {
           favArtists={favArtists}
           isMobile={false}
           recentWatch={recentWatch}
+          latestNote={latestNote}
         />
       )}
     </DefaultLayout>
@@ -57,6 +66,7 @@ const CardList: React.FC<CardListProps> = ({
   favArtists,
   isMobile,
   recentWatch,
+  latestNote,
 }) => {
   return (
     <Masonry
@@ -65,7 +75,7 @@ const CardList: React.FC<CardListProps> = ({
     >
       <FeaturedProjectCard />
       <ProjectListCard />
-      <LatestNoteCard />
+      <LatestNoteCard note={latestNote} />
       <FavoriteArtistCard favArtists={favArtists} />
       <RecentWatchCard recentWatch={recentWatch} />
     </Masonry>
@@ -77,10 +87,15 @@ const Spacer = () => <div className="h-7" />;
 export const getStaticProps: GetStaticProps = async () => {
   const favArtists = (await getTopArtist()) || [];
   const recentWatch = (await getMyRecentWatch()) || [];
+  const allNotes = (await getMyNotionNoteListData()) || [];
+  const latestNote = allNotes.find(
+    (n) => n?.published && !n?.archived && n?.name
+  );
   return {
     props: {
       favArtists,
       recentWatch,
+      latestNote,
     },
   };
 };
@@ -88,4 +103,5 @@ export const getStaticProps: GetStaticProps = async () => {
 interface HomeProps {
   favArtists: SpotifyArtist[];
   recentWatch: LetterboxRssItem[];
+  latestNote?: NoteListSchema;
 }

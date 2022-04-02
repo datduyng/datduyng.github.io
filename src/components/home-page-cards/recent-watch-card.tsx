@@ -45,7 +45,7 @@ const RecentWatchCard: React.FC<RecentWatchCardProps> = ({ recentWatch }) => {
                 alt={`Dominic recently watched movie - ${movie.title}`}
                 width={120}
                 height={160}
-                placeholder={"blur"}
+                // placeholder={"blur"}
               />
             </li>
           ))}

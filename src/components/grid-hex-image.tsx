@@ -21,7 +21,7 @@ export function HexImage({ favArtist }: { favArtist: SpotifyArtist }) {
         alt={`Favorite artist ${favArtist.name}`}
         height={90}
         width={90}
-        placeholder={"blur"}
+        // placeholder={"blur"}
       />
     </div>
   );
