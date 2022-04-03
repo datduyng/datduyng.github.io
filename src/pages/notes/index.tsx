@@ -43,6 +43,7 @@ export const getStaticProps: GetStaticProps = async () => {
       notes,
       archivedNotes,
     } as NoteIndexProps,
+    revalidate: 3600,
   };
 };
 

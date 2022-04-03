@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import DefaultLayout from "../../components/default-layout";
+import { getMyNotionNoteListData } from "../../lib/notion-api-client";
 
 //@ts-ignore
 const Code = dynamic(() =>
@@ -57,6 +58,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       props: {
         recordMap
       } as NoteProps,
+      revalidate: 3600,
     };
   } catch (e) {
     console.error('errrrrrreereer', e);
@@ -66,10 +68,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 }
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
+  const allNotes = (await getMyNotionNoteListData()) || [];
+  const allNoteIds = allNotes
+    .map(n => n?.id.replace(/-/g, ' '))
+    .map(id => `/notes/${id}`);
+  console.info("Pre-building static site for these note with ids", allNoteIds);
   return {
-    paths: [
-    ],
+    paths: [...allNoteIds],
     fallback: true // false or 'blocking'
   };
 }

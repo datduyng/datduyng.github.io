@@ -76,6 +76,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       recordMap: projectPage,
     },
+    revalidate: 3600,
   };
 };
 
