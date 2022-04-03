@@ -106,14 +106,21 @@ export const getStaticProps: GetStaticProps = async () => {
     (n) => n?.published && !n?.archived && n?.name
   );
   const projects = (await getFeaturedProjectListSchema()) || [];
-  const nowSpotifyPlaying = (await getSpotifyPlaying()) || null;
+  let nowPlaying = false;
+  try {
+    const spotifyPlaying = await getSpotifyPlaying();
+    nowPlaying = !!spotifyPlaying?.is_playing;
+  } catch (e) {
+    console.error('error when fetching is nowplaying', e);
+  }
+  
   return {
     props: {
       favArtists,
       recentWatch,
       latestNote,
       projects,
-      nowPlaying: !!nowSpotifyPlaying?.is_playing,
+      nowPlaying,
     },
   };
 };

@@ -59,7 +59,12 @@ export const getSpotifyPlaying = async () => {
     headers: {
       Authorization: `Bearer ${access_token}`
     }
-  }).then(res => res.json() as Promise<SpotifyPlaying>);
+  }).then(async res => {
+    if (res.status === 204) {
+      return { is_playing: false }
+    }
+    return res.json() as Promise<Partial<SpotifyPlaying>>;
+  });
 };
 
 export interface SpotifyPlaying {
