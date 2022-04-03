@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { HomePageCard } from "../stateless/card";
 import { NoteListSchema } from "../../lib/notion-api-client";
+import FullSizeButton from "./full-size-button";
 
 export default function LatestNoteCard({ note }: { note?: NoteListSchema }) {
   return (
@@ -9,9 +9,7 @@ export default function LatestNoteCard({ note }: { note?: NoteListSchema }) {
       <div className="h-[1px] bg-secondary-reallight my-4" />
       <h5 className="font-semibold">{note?.name}</h5>
       <p className="text-secondary mt-3">{note?.previewDesc}</p>
-      <button className="accent-body-bg mt-4 p-2 rounded-xl">
-        <Link href="/notes">Explore all notes</Link>
-      </button>
+      <FullSizeButton primary href={`/notes`} value={'Explore all notes'}/>
     </HomePageCard>
   );
 }

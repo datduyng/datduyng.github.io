@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { ProjectListSchema } from '../../lib/notion-api-client';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import FullSizeButton from './full-size-button';
 
 export default function ProjectListCard({ projects }: { projects: ProjectListSchema[] }) {
   return <HomePageCard>
@@ -12,7 +13,7 @@ export default function ProjectListCard({ projects }: { projects: ProjectListSch
     <div className='flex flex-col gap-3'>
       {projects.map(project => <ProjectItem key={project.id} project={project} />)}
     </div>
-    <button className='bg-secondary-light mt-4 p-2 rounded-xl'>Explore all projects</button>
+    <FullSizeButton href="/projects" value={'Explore all projects'}/>
   </HomePageCard>
 }
 
