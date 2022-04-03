@@ -1,4 +1,4 @@
-import Card, { HomePageCard} from "../stateless/card";
+import Card, { HomePageCard } from "../stateless/card";
 
 export default function FeaturedProjectCard() {
   return (<HomePageCard className="gap-4 accent-body-bg">
@@ -6,9 +6,9 @@ export default function FeaturedProjectCard() {
       🛠️
     </div>
     <p>
-      I am working on Scriptbar a browser spotlight tool that allow developer to 
+      {`I am working on Scriptbar a browser spotlight tool that allow developer to
       execute handy snippet with a few shortcut. Developer can explore and download
-      snippets from SnippetStore
+      snippets from SnippetStore`}
     </p>
   </HomePageCard>)
 }

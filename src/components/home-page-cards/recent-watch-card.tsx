@@ -1,10 +1,11 @@
 import cn from "classnames";
 import Image from "next/image";
 import ReactTooltip from "react-tooltip";
-import { LetterboxRssItem } from "../../lib/letterboxd-client";
 import { HomePageCard } from "../stateless/card";
 import NoSsr from "../stateless/no-ssr";
 import styles from "./recent-watch-card.module.css";
+import { LetterboxRssItem } from "../../lib/letterboxd-client";
+import * as gtag from "../../lib/gtag.client";
 
 interface RecentWatchCardProps {
   recentWatch?: LetterboxRssItem[];
@@ -34,6 +35,7 @@ const RecentWatchCard: React.FC<RecentWatchCardProps> = ({ recentWatch }) => {
               data-for="recent-watch"
               onClick={() => {
                 window.open(movie.uri, "_blank");
+                gtag.event('click on recent watch', { value: movie.uri });
               }}
             >
               <Image

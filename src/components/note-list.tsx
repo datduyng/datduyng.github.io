@@ -1,7 +1,7 @@
 import cn from "classnames";
-import Link from "next/link";
-import { NoteListSchema } from "../lib/notion-api-client";
 import { useRouter } from "next/router";
+import { NoteListSchema } from "../lib/notion-api-client";
+import * as gtag from "../lib/gtag.client";
 
 interface NoteListProps {
   notes?: NoteListSchema[];
@@ -18,7 +18,9 @@ const NoteList: React.FC<NoteListProps> = ({ notes }) => {
         <NoteCardItem
           key={note.id}
           onClick={() => {
-            router.push(`notes/${note.id}`);
+            const noteUrl = `notes/${note.id}`;
+            router.push(noteUrl);
+            gtag.event('click on note', { value: noteUrl, label: note.name });
           }}
         >
           <h3 className="text-2xl font-bold cursor-pointer">

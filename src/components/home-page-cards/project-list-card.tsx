@@ -1,10 +1,10 @@
 import cn from 'classnames';
-import { HomePageCard } from '../stateless/card';
 import Image from 'next/image';
-import { ProjectListSchema } from '../../lib/notion-api-client';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
+import { HomePageCard } from '../stateless/card';
 import FullSizeButton from './full-size-button';
+import { ProjectListSchema } from '../../lib/notion-api-client';
+import * as gtag from '../../lib/gtag.client';
 
 export default function ProjectListCard({ projects }: { projects: ProjectListSchema[] }) {
   return <HomePageCard>
@@ -13,7 +13,7 @@ export default function ProjectListCard({ projects }: { projects: ProjectListSch
     <div className='flex flex-col gap-3'>
       {projects.map(project => <ProjectItem key={project.id} project={project} />)}
     </div>
-    <FullSizeButton href="/projects" value={'Explore all projects'}/>
+    <FullSizeButton href="/projects" value={'Explore all projects'} />
   </HomePageCard>
 }
 
@@ -25,6 +25,7 @@ const ProjectItem: React.FC<{ project: ProjectListSchema }> = ({ project }) => {
         return window.open(project.url, '_blank')
       }
       router.push(project.url);
+      gtag.event('click on project preview', { label: project.name, value: project.url });
     }
   };
 
