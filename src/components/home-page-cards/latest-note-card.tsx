@@ -3,6 +3,10 @@ import { NoteListSchema } from "../../lib/notion-api-client";
 import FullSizeButton from "./full-size-button";
 
 export default function LatestNoteCard({ note }: { note?: NoteListSchema }) {
+  if (!note) {
+    return null;
+  }
+  
   return (
     <HomePageCard>
       <h3 className="text-lg self-center">📝 Latest note</h3>

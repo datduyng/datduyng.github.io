@@ -104,7 +104,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const allNotes = (await getMyNotionNoteListData()) || [];
   const latestNote = allNotes.find(
     (n) => n?.published && !n?.archived && n?.name
-  );
+  ) || null;
   const projects = (await getFeaturedProjectListSchema()) || [];
   let nowPlaying = false;
   try {
