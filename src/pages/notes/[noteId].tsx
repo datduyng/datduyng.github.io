@@ -58,7 +58,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       props: {
         recordMap
       } as NoteProps,
-      revalidate: 3600,
+      revalidate: 60,
     };
   } catch (e) {
     console.error('errrrrrreereer', e);

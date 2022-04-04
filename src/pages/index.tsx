@@ -122,7 +122,7 @@ export const getStaticProps: GetStaticProps = async () => {
       projects,
       nowPlaying,
     },
-    revalidate: 3600,
+    revalidate: 60,
   };
 };
 
