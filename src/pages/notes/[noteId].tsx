@@ -76,7 +76,7 @@ export async function getStaticPaths() {
   console.info("Pre-building static site for these note with ids", allNoteIds);
   return {
     paths: [...allNoteIds],
-    fallback: true // false or 'blocking'
+    fallback: true, // false or 'blocking'
   };
 }
 
