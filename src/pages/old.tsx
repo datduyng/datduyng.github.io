@@ -20,7 +20,7 @@ const links: ButtonType[] = [
     name: "My real personal website",
     color: "#00ab6c",
     icon: <FaRegFilePdf fontSize={20} color={"#fff"} />,
-    href: "https://domnguyen.qstack.us",
+    href: "https://domng.net",
     newTab: true,
   },
   {
